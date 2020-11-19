@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createBrowserHistory } from 'history';
+import { Router, Route } from 'react-router-dom';
+import { configure } from 'axios-hooks';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import axios from './utils/axios';
+import { GoogleLogin } from './pages/login/Loginpage';
+const history = createBrowserHistory();
+configure({ axios });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  // <Router history={history}>
+  //   <Route path="/" component={App} />
+  // </Router>,
+  <GoogleLogin
+      clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+      buttonText="Login"
+      onSuccess={googleLogin}
+      onFailure={responseGoogle}
+      cookiePolicy={'single_host_origin'}
+  />,
+  document.getElementById('root'),
+);

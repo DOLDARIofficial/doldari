@@ -12,11 +12,11 @@ import { AuthModule } from './resource/auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '34.64.164.83',
+      host: 'database-1.cgdowelkhyep.us-east-2.rds.amazonaws.com',
       port: 3306,
-      username: 'root',
-      password: 'cse',
-      database: 'pnu-extension',
+      username: 'admin',
+      password: '00000000',
+      database: 'user',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       // synchronize: true,
     }),

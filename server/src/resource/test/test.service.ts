@@ -13,4 +13,7 @@ export class TestService {
   async find(): Promise<any> {
     return await this.newTestRepository.find( );
   }
+  async create(): Promise<any> {
+    return await this.newTestRepository.create();
+  }
 }
