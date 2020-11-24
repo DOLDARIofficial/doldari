@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 //organisms
 //pages
@@ -7,8 +7,10 @@ import Mainpage from './pages/main/Mainpage';
 import Bookpage from './pages/books/Bookpage';
 import Loginpage from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
+import BookDetail from './organisms/books/components/BookDetail'
 import {makeStyles,  createMuiTheme, ThemeProvider} from '@material-ui/core';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +48,6 @@ const theme = createMuiTheme({
 
 function App() {
   const classes = useStyles();
-
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.content}>
@@ -60,6 +61,7 @@ function App() {
           <Route exact path="/rooms" component={Roompage}/>
           <Route exact path="/books" component={Bookpage}/>
           <Route exact path="/health_management" component={Healthpage}/>
+          <Route exact path="/books/detail" component={BookDetail}/>
         </Switch>
       
       </BrowserRouter>
