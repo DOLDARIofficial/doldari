@@ -10,23 +10,34 @@
 //     return this.appService.getHello();
 //   }
 // }
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
-import { AppService } from './app.service';
+import {
+  Controller, Get, Req, UseGuards
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { AppService } from './app.service';
 
-@Controller('google')
+@Controller('')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  // constructor(private readonly appService: AppService) {}
 
+  // @Get()
+  // @UseGuards(AuthGuard('google'))
+  // async googleAuth(@Req() req: any): Promise<any> {
+  //   return (console.log(req));
+  // }
+
+  // @Get('redirect')
+  // @UseGuards(AuthGuard('google'))
+  // googleAuthRedirect(@Req() req: Request): any {
+  //   return this.appService.googleLogin(req);
+  // }
   @Get()
-  @UseGuards(AuthGuard('google'))
-  async googleAuth(@Req() req) {}
-
-  @Get('redirect')
-  @UseGuards(AuthGuard('google'))
-  googleAuthRedirect(@Req() req) {
-    return this.appService.googleLogin(req)
+  home(){
+    return 'hello!!!';
+  }
+  @Get()
+  getHello(){
+    return 'hello!! gethello';
   }
 
- 
 }

@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const test_module_1 = require("./resource/test/test.module");
+const app_service_1 = require("./app.service");
+const app_controller_1 = require("./app.controller");
 const auth_module_1 = require("./resource/auth/auth.module");
+const room_module_1 = require("./resource/room/room.module");
 let AppModule = class AppModule {
     constructor(connection) {
         this.connection = connection;
@@ -25,17 +26,20 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     common_1.Module({
         imports: [
+            config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
                 host: 'database-1.cgdowelkhyep.us-east-2.rds.amazonaws.com',
                 port: 3306,
                 username: 'admin',
                 password: '00000000',
-                database: 'user',
-                entities: [__dirname + '/**/*.entity{.ts,.js}'],
+                database: 'doldari',
+                timezone: 'Asia/Seoul',
+                synchronize: true,
+                autoLoadEntities: true
             }),
-            test_module_1.TestModule,
-            auth_module_1.AuthModule
+            auth_module_1.AuthModule,
+            room_module_1.RoomModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
