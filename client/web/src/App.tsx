@@ -9,6 +9,7 @@ import Mainpage from './pages/main/Mainpage';
 import Bookpage from './pages/books/Bookpage';
 import Login from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
+import HealthView from './pages/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,6 +62,7 @@ function App(): JSX.Element {
             <Route exact path="/books" component={Bookpage} />
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
+            <Route exact path="/heath_management/detail" component={HealthView}/>
           </Switch>
 
         </BrowserRouter>

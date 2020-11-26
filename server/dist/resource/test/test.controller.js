@@ -19,9 +19,12 @@ let TestController = class TestController {
     find() {
         return this.testService.find();
     }
+<<<<<<< HEAD
+=======
     create() {
         return this.testService.create();
     }
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
 };
 __decorate([
     common_1.Get(),
@@ -29,12 +32,15 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], TestController.prototype, "find", null);
+<<<<<<< HEAD
+=======
 __decorate([
     common_1.Post(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], TestController.prototype, "create", null);
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
 TestController = __decorate([
     common_1.Controller('test'),
     __metadata("design:paramtypes", [test_service_1.TestService])
