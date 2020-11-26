@@ -7,7 +7,7 @@ import PaginationLink from '../../organisms/books/Bookpagenation'
 
 export default function Books(): JSX.Element{
     return(
-    <div style={{paddingRight : 100, paddingLeft : 100, paddingTop:150, paddingBottom:100, color:'primary', justifyContent: "center", alignItems: "center"}}>
+    <div style={{paddingRight : 100, paddingLeft : 100, paddingTop:150, paddingBottom:100, color:'#d0dcf5', justifyContent: "center", alignItems: "center"}}>
      <Appbar/>
         <Paper variant="outlined">
             <Grid container spacing={3} style={{alignContent:'center'} } >

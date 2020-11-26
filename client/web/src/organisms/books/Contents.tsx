@@ -48,7 +48,7 @@ export default function GridTool() {
                     <Grid container>
                         <Grid item>
                             <Paper className={classes.wrap}>
-                                <ButtonBase className={classes.image} component={Link} to ='/books/'>
+                                <ButtonBase className={classes.image} component={Link} to ='/books/detail'>
                                 <img className={classes.image} alt='complex' src='https://ifh.cc/g/2JYFaB.jpg' width='190' height='190'/>
                                 </ButtonBase>
                             </Paper>
