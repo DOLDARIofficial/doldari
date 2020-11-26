@@ -6,11 +6,10 @@ import { TestUser } from './entities/testUser.entity';
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectRepository(TestUser) private readonly userRepository: Repository<TestUser>
-  ){}
+    @InjectRepository(TestUser) private readonly userRepository: Repository<TestUser>,
+  ) {}
 
-  async addUser(user: { id: string; pw: string; email: string}) {
-  
+  async addUser(user: { id: string; pw: string; email: string}): Promise<boolean> {
     // const newUser = await this.userRepository.create();
     // newUser.id = user.id;
     // newUser.pw = user.pw;
