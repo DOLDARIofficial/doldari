@@ -24,8 +24,8 @@ import express from 'express';
 // }
 
 const config = {
-  clientID: '652559907955-u17jnat6auvjqe1kcq6imhn67jdnppbl.apps.googleusercontent.com',
-  clientSecret: 'I4BRjcNIXF5quc3V5T3uKkiA',
+  clientID: '822280945870-am3tfoa2vg72q6sabr7qi0ogoj9gast6.apps.googleusercontent.com',
+  clientSecret: 'ivn2SYc6ASHZZcgvU9PNHKoc',
   callbackURL: 'http://localhost:3000/auth/google/callback',
   passReqToCallback: true,
   scope: ['email', 'profile'],
