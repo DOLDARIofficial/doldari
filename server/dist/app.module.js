@@ -18,6 +18,14 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const test_module_1 = require("./resource/test/test.module");
 const auth_module_1 = require("./resource/auth/auth.module");
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const books_controller_1 = require("./books/books.controller");
+const books_service_1 = require("./books/books.service");
+=======
+>>>>>>> f2f5083d7862fa151514d356db21cf4c8c247861
+>>>>>>> 93064e37ad8944bc44f33b31283bd11a76a6f5e2
 =======
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
@@ -47,6 +55,15 @@ AppModule = __decorate([
             }),
             test_module_1.TestModule,
             auth_module_1.AuthModule
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        ],
+        controllers: [app_controller_1.AppController, books_controller_1.BooksController],
+        providers: [app_service_1.AppService, books_service_1.BooksService],
+=======
+>>>>>>> f2f5083d7862fa151514d356db21cf4c8c247861
+>>>>>>> 93064e37ad8944bc44f33b31283bd11a76a6f5e2
 =======
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
@@ -66,6 +83,7 @@ AppModule = __decorate([
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
     }),
     __metadata("design:paramtypes", [typeorm_2.Connection])
 ], AppModule);
