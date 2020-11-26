@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // organisms
 // pages
@@ -13,6 +13,7 @@ import Login from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
 import BookDetail from './organisms/books/components/BookDetail';
 
+import HealthView from './pages/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
 
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +66,7 @@ function App(): JSX.Element {
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
             <Route exact path="/shared_page" component={BookDetail} />
+            <Route exact path="/heath_management/detail" component={HealthView} />
           </Switch>
 
         </BrowserRouter>
