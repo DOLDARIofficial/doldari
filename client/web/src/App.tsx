@@ -9,6 +9,7 @@ import Loginpage from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
 import {makeStyles,  createMuiTheme, ThemeProvider} from '@material-ui/core';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import HealthView from './pages/health/Healthview';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,7 +60,8 @@ function App() {
           <Route exact path="/login" component={Loginpage}/>
           <Route exact path="/rooms" component={Roompage}/>
           <Route exact path="/books" component={Bookpage}/>
-          <Route exact path="/health_management" component={Healthpage}/>
+          <Route exact path="/health_management" component={Healthpage}/> 
+          <Route exact path="/health_management/detail" component={HealthView}/>
         </Switch>
       
       </BrowserRouter>
