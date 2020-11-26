@@ -1,5 +1,7 @@
 import React from 'react';
-import {makeStyles, Paper, Grid , Typography, ButtonBase} from '@material-ui/core';
+import {
+  makeStyles, Paper, Grid,
+} from '@material-ui/core';
 import Hgrid from '../../organisms/health/Hgrid';
 import Hpagenation from '../../organisms/health/Hpagenation';
 import ButtonAppBar from '../../shared/Appbar';
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(3),
     maxWidth: 1200,
-    marginTop : 150,
+    marginTop: 150,
   },
   image: {
     width: 150,
@@ -25,22 +27,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Healthpage():JSX.Element {
+export default function Healthpage(): JSX.Element {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-    <ButtonAppBar/>
-    <Htop/>
-      <div style={{width: '70%', margin: '30px auto'}}>
-          <Paper className={classes.paper} variant="outlined">
-          <Grid container spacing={2} >
-            <Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/>
-            <Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/><Hgrid/>
+      <ButtonAppBar />
+      <Htop />
+      <div style={{ width: '70%', margin: '30px auto' }}>
+        <Paper className={classes.paper} variant="outlined">
+          <Grid container spacing={2}>
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
+            <Hgrid />
           </Grid>
-          </Paper>
+        </Paper>
       </div>
-      <Hpagenation/>
+      <Hpagenation />
     </div>
   );
 }
