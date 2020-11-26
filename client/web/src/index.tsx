@@ -5,24 +5,16 @@ import { createBrowserHistory } from 'history';
 import { Router, Route } from 'react-router-dom';
 import { configure } from 'axios-hooks';
 import App from './App';
-import axios from './util/axios';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import './assets/doldari.css';
+import axios from './utils/axios';
 
-const history = createBrowserHistory();
+const history: any = createBrowserHistory();
 configure({ axios });
 
-const theme = createMuiTheme({
-  typography: {
-    fontFamily : 'sans-serif'
-  }
-})
-
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <Router history={history}>
-     <Route path="/" component={App} />
-    </Router>,
-  </MuiThemeProvider>,
+
+  <Router history={history}>
+    <Route path="/" component={App} />
+  </Router>,
+
   document.getElementById('root'),
 );
