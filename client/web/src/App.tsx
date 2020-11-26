@@ -1,15 +1,16 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-//organisms
-//pages
+// organisms
+// pages
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Roompage from './pages/rooms/Roompage';
 import Mainpage from './pages/main/Mainpage';
 import Bookpage from './pages/books/Bookpage';
-import Loginpage from './pages/login/Loginpage';
+import Login from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
-import {makeStyles,  createMuiTheme, ThemeProvider} from '@material-ui/core';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import HealthView from './pages/health/Healthview';
+import DetailPage from './pages/shared/DetailPage';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   // toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    marginTop: '70px',
-    minHeight: 'calc(100vh - 123px)',
+    // padding: theme.spacing(3),
+    minHeight: '300vh',
     width: '100%',
+    backgroundColor: '#d0dcf5',
   },
 
 }));
@@ -44,29 +45,29 @@ const theme = createMuiTheme({
   },
 });
 
-
-function App() {
+function App(): JSX.Element {
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
-    <div className={classes.content}>
-      <CssBaseline />
-    
-      <BrowserRouter>
-      
-        <Switch>
-          <Route exact path="/" component={Mainpage}/>
-          <Route exact path="/login" component={Loginpage}/>
-          <Route exact path="/rooms" component={Roompage}/>
-          <Route exact path="/books" component={Bookpage}/>
-          <Route exact path="/health_management" component={Healthpage}/> 
-          <Route exact path="/health_management/detail" component={HealthView}/>
-        </Switch>
-      
-      </BrowserRouter>
-    
-    </div>
+      <div className={classes.content}>
+        <CssBaseline />
+
+        <BrowserRouter>
+
+          <Switch>
+            <Route exact path="/" component={Mainpage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/rooms" component={Roompage} />
+            <Route exact path="/books" component={Bookpage} />
+            <Route exact path="/health_management" component={Healthpage} />
+            <Route exact path="/shared_page" component={DetailPage} />
+            <Route exact path="/heath_management/detail" component={HealthView}/>
+          </Switch>
+
+        </BrowserRouter>
+
+      </div>
     </ThemeProvider>
   );
 }

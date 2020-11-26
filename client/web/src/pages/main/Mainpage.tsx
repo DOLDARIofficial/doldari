@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { fade, createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -120,3 +121,15 @@ export default function _main() {
 
   );
 }
+=======
+// import useAxios from 'axios-hooks';
+
+export default function Mainpage(): JSX.Element {
+  // const [data, executeGet] = useAxios(
+  //   { url: '/test', method: 'get' }, { manual: true },
+  // );
+  return (
+    <div />
+  );
+}
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9

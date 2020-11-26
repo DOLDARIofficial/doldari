@@ -21,7 +21,13 @@ let AuthController = class AuthController {
         this.authService = authService;
     }
     ;
+<<<<<<< HEAD
     async googleAuth(req) { }
+=======
+    async googleAuth(req) {
+        return (console.log(req));
+    }
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
     async googleAuthCallback(req) {
         return 'ok';
     }
