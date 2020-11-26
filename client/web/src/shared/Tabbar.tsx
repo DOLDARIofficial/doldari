@@ -9,7 +9,9 @@ import Box from '@material-ui/core/Box';
 import { Link } from 'react-router-dom';
 
 function TabPanel(props: any) {
-  const { children, value, index, ...other } = props;
+  const {
+    children, value, index, ...other
+  } = props;
 
   return (
     <div
@@ -50,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tabbar() {
+export default function Tabbar(): JSX.Element {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -62,9 +64,9 @@ export default function Tabbar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.root}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="자취방/쉐어하우스" component={Link} to='/rooms' {...a11yProps(0)} />
-          <Tab label="헬스장 게시판" component={Link} to='/health_management'{...a11yProps(1)} />
-          <Tab label="책방" component={Link} to='/books' {...a11yProps(2)} />
+          <Tab label="자취방/쉐어하우스" component={Link} to="/rooms" {...a11yProps(0)} />
+          <Tab label="헬스장 게시판" component={Link} to="/health_management" {...a11yProps(1)} />
+          <Tab label="책방" component={Link} to="/books" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       {/* <TabPanel value={value} index={0}>
@@ -76,7 +78,7 @@ export default function Tabbar() {
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel> */}
-    
+
     </div>
   );
 }

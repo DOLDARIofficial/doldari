@@ -62,7 +62,7 @@ function App(): JSX.Element {
             <Route exact path="/books" component={Bookpage} />
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
-            <Route exact path="/heath_management/detail" component={HealthView}/>
+            <Route exact path="/heath_management/detail" component={HealthView} />
           </Switch>
 
         </BrowserRouter>
