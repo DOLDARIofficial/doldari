@@ -24,9 +24,12 @@ let TestService = class TestService {
     async find() {
         return await this.newTestRepository.find();
     }
+<<<<<<< HEAD
+=======
     async create() {
         return await this.newTestRepository.create();
     }
+>>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
 };
 TestService = __decorate([
     common_1.Injectable(),
