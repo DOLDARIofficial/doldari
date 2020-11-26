@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 interface AppbarState {
-  state: boolean;
+  state?: boolean;
 }
 export default function Appbar(data: AppbarState): JSX.Element {
   const { state } = data;

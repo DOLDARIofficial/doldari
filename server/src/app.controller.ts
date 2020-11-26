@@ -11,7 +11,7 @@
 //   }
 // }
 import {
-  Controller, Get, Req, UseGuards
+  Controller, Get, Req, UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AppService } from './app.service';
@@ -32,12 +32,12 @@ export class AppController {
   //   return this.appService.googleLogin(req);
   // }
   @Get()
-  home(){
+  home() {
     return 'hello!!!';
   }
+
   @Get()
-  getHello(){
+  getHello() {
     return 'hello!! gethello';
   }
-
 }

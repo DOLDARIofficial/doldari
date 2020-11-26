@@ -1,7 +1,7 @@
 import Paper from '@material-ui/core/Paper';
 import { Grid } from '@material-ui/core';
 import React from 'react';
-import Appbar from '../../shared/Appbar';
+import Appbar from '../../organisms/shared/Appbar';
 import GridTool from '../../organisms/books/Contents';
 import PaginationLink from '../../organisms/books/Bookpagenation';
 
