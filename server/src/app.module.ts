@@ -1,15 +1,4 @@
 import { Module } from '@nestjs/common';
-<<<<<<< HEAD
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
-import { TestModule } from './resource/test/test.module'
-import { AuthModule } from './resource/auth/auth.module';
-import { BooksController } from './books/books.controller';
-import { BooksService } from './books/books.service';
-
-=======
 import { ConfigModule } from '@nestjs/config';
 
 // typeOrm
@@ -17,19 +6,18 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import loadConfig from './config/loadConfig';
-import { TypeOrmConfigService } from './config/database.config';
+// import loadConfig from './config/loadConfig';
+// import { TypeOrmConfigService } from './config/database.config';
 
 // modules
-//import { TestModule } from './resource/test/test.module';
+// import { TestModule } from './resource/test/test.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
-import { RoomEntity } from './resource/room/entities/room.entitiy';
-import { TestUser } from './resource/auth/entities/testUser.entity';
->>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
+// import { RoomEntity } from './resource/room/entities/room.entitiy';
+// import { TestUser } from './resource/auth/entities/testUser.entity';
 @Module({
   imports: [
-   ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({ isGlobal: true }),
     // TypeOrmModule.forRootAsync({
     //   useClass: TypeOrmConfigService,
     // }),
@@ -42,7 +30,7 @@ import { TestUser } from './resource/auth/entities/testUser.entity';
       database: 'doldari',
       timezone: 'Asia/Seoul',
       synchronize: true,
-      autoLoadEntities: true
+      autoLoadEntities: true,
     }),
     AuthModule,
     RoomModule,

@@ -12,7 +12,6 @@ import Bookpage from './pages/books/Bookpage';
 import Login from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
 import BookDetail from './organisms/books/components/BookDetail';
-
 import HealthView from './pages/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
 
@@ -67,6 +66,7 @@ function App(): JSX.Element {
             <Route exact path="/shared_page" component={DetailPage} />
             <Route exact path="/shared_page" component={BookDetail} />
             <Route exact path="/heath_management/detail" component={HealthView} />
+            <Route exact path="/books/detail" component={BookDetail} />
           </Switch>
 
         </BrowserRouter>
