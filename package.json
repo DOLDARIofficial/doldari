@@ -1,6 +1,7 @@
 {
 	"dependencies": {
 		"@material-ui/icons": "4.9.1",
+		"@material-ui/lab": "4.0.0-alpha.56",
 		"@nestjs/jwt": "7.2.0",
 		"@types/react-dom": "^16.9.9",
 		"@types/react-router-dom": "^5.1.6",

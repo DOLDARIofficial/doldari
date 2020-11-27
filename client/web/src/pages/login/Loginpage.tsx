@@ -22,6 +22,8 @@ const googleLogin = async (response: any) => {
   // } catch (e) {
   //   throw e
   // }
+  // window.location('http://localhost:3001/');
+  window.location.href = 'http://localhost:3001/';
 };
 
 const onFailure = (response: any) => {

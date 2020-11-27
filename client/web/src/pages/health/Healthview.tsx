@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 // import ButtonBase from '@material-ui/core/ButtonBase';
 // import Hgrid from '../../organisms/health/Hgrid';
 // import Hpagenation from '../../organisms/health/Hpagenation';
-import ButtonAppBar from '../../shared/Appbar';
+import Appbar from '../../organisms/shared/Appbar';
 import Htop from '../../organisms/health/Htop';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +43,7 @@ export default function HealthView(): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <ButtonAppBar />
+      <Appbar />
       <Htop />
       <div style={{ width: '70%', margin: '20px auto' }}>
         <Paper className={classes.paper} variant="outlined">
