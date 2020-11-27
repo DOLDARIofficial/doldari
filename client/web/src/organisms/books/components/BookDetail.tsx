@@ -30,9 +30,6 @@ const useStyles = makeStyles(() => createStyles({
     color: '#f5a1a1',
     fontSize: '24px',
   },
-  paper: {
-    padding: '20',
-  },
 }));
 
 export default function BookDetail(): JSX.Element {
@@ -74,7 +71,7 @@ export default function BookDetail(): JSX.Element {
               </Grid>
               <Grid container>
                 <Grid item xs={1}>
-                  <Typography className={classes.pricetext} style={{ marginLeft: '10' }}>
+                  <Typography className={classes.pricetext} style={{ marginLeft: 10 }}>
                     <strong>19000</strong>
                   </Typography>
                 </Grid>
@@ -92,8 +89,8 @@ export default function BookDetail(): JSX.Element {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item style={{ marginRight: '50' }}>
+        <Grid container style={{ paddingLeft: 70, paddingTop: 20 }}>
+          <Grid item>
             <Typography variant="h6" style={{ color: 'skyblue', fontFamily: 'delivery', marginLeft: '50' }}>
               책상태
             </Typography>
@@ -101,7 +98,7 @@ export default function BookDetail(): JSX.Element {
         </Grid>
         <Grid container spacing={2}>
           <Grid item>
-            <Paper elevation={0} className={classes.paper}>
+            <Paper elevation={0} style={{ marginLeft: 100 }}>
               <p>
                 책 내부
                 {' '}
