@@ -31,35 +31,33 @@ export default function Healthpage(): JSX.Element {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div style={{ width: '70%', margin: '20px auto' }}>
       <ButtonAppBar />
       <Htop />
-      <div style={{ width: '70%', margin: '0px auto' }}>
-        <Paper className={classes.paper} variant="outlined">
-          <Grid container spacing={2}>
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-            <Hgrid />
-          </Grid>
-        </Paper>
-      </div>
+      <Paper className={classes.paper} variant="outlined">
+        <Grid container spacing={2}>
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+          <Hgrid />
+        </Grid>
+      </Paper>
       <Hpagenation />
     </div>
   );

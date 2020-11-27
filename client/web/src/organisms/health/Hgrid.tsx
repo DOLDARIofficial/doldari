@@ -3,6 +3,7 @@ import { Grid, Button, makeStyles } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +42,7 @@ export default function Hgrid(): JSX.Element {
           <Grid item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Button size="medium">
+                <Button size="medium" component={Link} to="/heath_management/detail">
                   <Typography gutterBottom variant="h6">
                     (제목입니다) 피트니스 센터 양도합니다!
                   </Typography>
@@ -76,7 +77,7 @@ export default function Hgrid(): JSX.Element {
             </Grid>
           </Grid>
           <Grid item>
-            <ButtonBase className={classes.image}>
+            <ButtonBase className={classes.image} component={Link} to="/heath_management/detail">
               <img className={classes.img} alt="complex" src="2.png" />
             </ButtonBase>
             <Grid>
