@@ -1,5 +1,5 @@
 import {
-  IsNumber, IsString, IsBoolean,
+  IsNumber, IsString, /* IsBoolean, */
 } from 'class-validator';
 
 export class RoomDto {
