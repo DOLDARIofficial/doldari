@@ -131,19 +131,19 @@ export default function BookDetail(): JSX.Element {
                 <br />
                 내가 그지라서 그럼..
               </p>
-              <Grid container xs={12} alignContent="flex-end">
+              <Grid container xs={12} alignContent="flex-end" style={{ paddingTop: 10 }}>
                 <Grid
                   item
                   style={{
-                    width: 250, height: 250, marginLeft: '3', marginRight: '10',
+                    width: 250, height: 250, marginLeft: 50,
                   }}
                 >
                   <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
                 </Grid>
-                <Grid item style={{ width: 250, height: 250, marginLeft: '3' }}>
+                <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
                   <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
                 </Grid>
-                <Grid item style={{ width: 250, height: 250, marginLeft: '3' }}>
+                <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
                   <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
                 </Grid>
                 <Grid item>
