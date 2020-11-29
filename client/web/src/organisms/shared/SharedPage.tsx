@@ -134,6 +134,21 @@ export default function SharedPage(): JSX.Element {
     });
   }
 
+  function searchBook() {
+    $('#search').click(() => {
+      $.ajax({
+        method: 'GET',
+        url: 'https://dapi.kakao.com/v3/search/book?target=title',
+
+        data: { query: $('#bookName').val() },
+        headers: { Authorization: 'KakaoAK 45d42122e98ac759a7bf1ecf6e3dee48' },
+      })
+        .done((msg) => {
+          console.log();
+        });
+    });
+  }
+
   const classes = useStyles();
   return (
     <Paper
@@ -157,6 +172,8 @@ export default function SharedPage(): JSX.Element {
 
         <Grid item xs={11} style={{ paddingBottom: 30, justifyContent: 'left' }}>
           <div className={classes.search}>
+            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossOrigin="anonymous" />
+            ;
             <InputBase
               placeholder="ISBN 또는 책이름 검색..."
               classes={{
@@ -166,7 +183,9 @@ export default function SharedPage(): JSX.Element {
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleName}
             />
-            <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+            <Button onClick={searchBook}>
+              <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+            </Button>
           </div>
         </Grid>
 
