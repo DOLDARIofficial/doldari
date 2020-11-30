@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AccessControlModule } from 'nest-access-control';
-import { roles } from './roles/App.roles';
 // typeOrm
-
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Connection } from 'typeorm';
+import { roles } from './roles/App.roles';
 // import loadConfig from './config/loadConfig';
 // import { TypeOrmConfigService } from './config/database.config';
 
@@ -13,6 +12,8 @@ import { roles } from './roles/App.roles';
 // import { TestModule } from './resource/test/test.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
+// import { RoomEntity } from './resource/room/entities/room.entitiy';
+// import { TestUser } from './resource/auth/entities/testUser.entity';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),

@@ -5,8 +5,15 @@ import {
 } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+<<<<<<< HEAD
 
 import Appbar from '../../shared/Appbar';
+=======
+import {
+  Button, createStyles,
+} from '@material-ui/core';
+import Appbar from '../../../shared/Appbar';
+>>>>>>> 4d727006292331c84d80668e57c661f600b8e3b2
 
 const theme = createMuiTheme();
 
@@ -19,11 +26,10 @@ theme.typography.h3 = {
     fontSize: '30px',
   },
 };
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => createStyles({
   textprimary: {
     color: '#a0a0a0',
     fontSize: '15px',
-    background: '#ffffff',
   },
   pricetext: {
     color: '#f5a1a1',
@@ -70,34 +76,85 @@ export default function BookDetail(): JSX.Element {
               </Grid>
               <Grid container>
                 <Grid item xs={1}>
-                  <Typography className={classes.pricetext} style={{ marginLeft: '10' }}>
+                  <Typography className={classes.pricetext} style={{ marginLeft: 10 }}>
                     <strong>19000</strong>
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography>
-                    <body style={{ color: 'gray' }}><del>21000</del></body>
+                    <p style={{ color: 'gray' }}><del>21000</del></p>
                   </Typography>
+                </Grid>
+                <Grid item>
+                  <Button>
+                    <img src="sale.png" height="30" alt="?" />
+                  </Button>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item style={{ marginLeft: '50' }}>
-          <Typography variant="h6" style={{ color: 'skyblue', fontFamily: 'delivery' }}>
-            책상태
-          </Typography>
+        <Grid container style={{ paddingLeft: 70, paddingTop: 20 }}>
+          <Grid item>
+            <Typography variant="h6" style={{ color: 'skyblue', fontFamily: 'delivery', marginLeft: '50' }}>
+              책상태
+            </Typography>
+          </Grid>
         </Grid>
         <Grid container spacing={2}>
           <Grid item>
-            <Paper elevation={0} style={{ marginLeft: '50' }} className={classes.textprimary}>
-              <body>
+            <Paper elevation={0} style={{ marginLeft: 100 }}>
+              <p>
                 책 내부
                 {' '}
                 <strong>깨끗</strong>
                 {' '}
-                필기 밑줄
-              </body>
+                필기
+                {' '}
+                밑줄
+              </p>
+              <p>
+                책 외부
+                {' '}
+                깨끗
+                {' '}
+                <strong>이름기입</strong>
+                {' '}
+                <strong>변색</strong>
+                {' '}
+                <strong>훼손</strong>
+              </p>
+              <p>
+                <br />
+                필기 및 밑줄 없고, 표지도 깨끗합니다!
+                <br />
+                아직 사용하지 않은 새 책 입니다
+                <br />
+                사용감 1도 없음
+                <br />
+                깨끗하니 좀 비싸도 이해바람
+                <br />
+                내가 그지라서 그럼..
+              </p>
+              <Grid container xs={12} alignContent="flex-end" style={{ paddingTop: 10 }}>
+                <Grid
+                  item
+                  style={{
+                    width: 250, height: 250, marginLeft: 50,
+                  }}
+                >
+                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                </Grid>
+                <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
+                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                </Grid>
+                <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
+                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                </Grid>
+                <Grid item>
+                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
         </Grid>
