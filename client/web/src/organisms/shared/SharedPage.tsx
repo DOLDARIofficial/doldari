@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SharedPage(): JSX.Element {
   const [, executePost] = useAxios(
-    { url: 'http://localhost:3000/room', method: 'post' }, { manual: true },
+    { url: '/room', method: 'post' }, { manual: true },
   );
 
   // const authContext = React.useContext();
@@ -113,7 +113,7 @@ export default function SharedPage(): JSX.Element {
   };
 
   const handleContents = (event: any) => {
-    setDataSource({ ...dataSource, content: event });
+    setDataSource({ ...dataSource, content: event.target.value });
   };
 
   const handlePrice = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -128,8 +128,8 @@ export default function SharedPage(): JSX.Element {
       createdAt: moment(new Date()).format('lll'),
       roomId: 1,
     };
-    executePost({ data }).then().catch((err) => {
-      console.log(err);
+    executePost({ data: dataSource }).then().catch((err) => {
+      console.log(err.message);
       console.log(data);
     });
   }

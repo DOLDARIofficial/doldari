@@ -8,7 +8,7 @@ export default function DetailPage(): JSX.Element {
     <div>
       <Appbar state={state} />
       <div style={{
-        paddingTop: 100, display: 'flex', justifyContent: 'center',
+        paddingTop: 200, display: 'flex', justifyContent: 'center',
       }}
       >
         <SharedPage />

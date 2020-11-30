@@ -6,7 +6,7 @@ import {
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import Appbar from '../../../shared/Appbar';
+import Appbar from '../../shared/Appbar';
 
 const theme = createMuiTheme();
 
