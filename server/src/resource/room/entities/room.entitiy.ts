@@ -1,18 +1,19 @@
-import { Entity, Column, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity, Column, OneToOne, PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Room } from '../interfaces/room.interface';
 
 @Entity({ name: 'Room' })
-export class RoomEntity implements Room{
-  
+export class RoomEntity implements Room {
  @PrimaryGeneratedColumn()
  roomId: number;
- 
+
  @Column()
  createdAt: number;
- 
+
  @Column()
  name: string;
- 
+
  @Column()
  price: number;
 
@@ -24,9 +25,10 @@ export class RoomEntity implements Room{
 
  @Column()
  state: string;
- constructor(partial: Partial<RoomEntity>) {
-  Object.assign(this, partial);
-}
-  seller: string;
 
+ constructor(partial: Partial<RoomEntity>) {
+   Object.assign(this, partial);
+ }
+
+  seller: string;
 }
