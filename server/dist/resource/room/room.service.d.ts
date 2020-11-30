@@ -1,6 +1,6 @@
-import { RoomDto } from './dto/Room.dto';
-import { RoomPatchDto } from './dto/RoomPatch.dto';
 import { Repository } from 'typeorm';
+import { RoomDto } from './dto/room.dto';
+import { RoomPatchDto } from './dto/RoomPatch.dto';
 import { RoomEntity } from './entities/room.entitiy';
 export declare class RoomService {
     private readonly RoomRepository;

@@ -12,7 +12,7 @@ AWS.config.update({
   region: 'us-east-2c',
   accessKeyId: 'AKIATILWY45OWWGZVUEH',
   secretAccessKey: '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',
-  
+
 });
 
 // Create a Secrets Manager client
