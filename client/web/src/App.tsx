@@ -63,7 +63,7 @@ function App(): JSX.Element {
             <Route exact path="/" component={Mainpage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/rooms" component={Roompage} />
-            <Route exact path="/rooms" component={Roomdetail} />
+            <Route exact path="/rooms/Roomdetail" component={Roomdetail} />
             <Route exact path="/books" component={Bookpage} />
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
