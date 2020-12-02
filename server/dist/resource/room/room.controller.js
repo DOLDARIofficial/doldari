@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoomController = void 0;
 const common_1 = require("@nestjs/common");
 const room_service_1 = require("./room.service");
-const room_dto_1 = require("./dto/room.dto");
+const Room_dto_1 = require("./dto/Room.dto");
 const RoomPatch_dto_1 = require("./dto/RoomPatch.dto");
 let RoomController = class RoomController {
     constructor(roomService) {
@@ -57,7 +57,7 @@ __decorate([
     common_1.UseInterceptors(common_1.ClassSerializerInterceptor),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [room_dto_1.RoomDto]),
+    __metadata("design:paramtypes", [Room_dto_1.RoomDto]),
     __metadata("design:returntype", Promise)
 ], RoomController.prototype, "createRoom", null);
 __decorate([

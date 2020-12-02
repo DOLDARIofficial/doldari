@@ -1,7 +1,6 @@
-import { BookList } from './entities/Book.entities';
 export declare class BooksService {
     private books;
-    getAll(): Promise<BookList[]>;
+    getAll(): Promise<any[]>;
     findOne(id: number): any;
     deleteOne(id: number): void;
     create(bookData: any): void;

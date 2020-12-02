@@ -19,7 +19,7 @@ RoomModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([room_entitiy_1.RoomEntity])],
         controllers: [room_controller_1.RoomController],
         providers: [room_service_1.RoomService],
-        exports: [room_service_1.RoomService]
+        exports: [room_service_1.RoomService],
     })
 ], RoomModule);
 exports.RoomModule = RoomModule;

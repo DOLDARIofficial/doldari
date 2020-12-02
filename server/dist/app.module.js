@@ -11,30 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-<<<<<<< HEAD
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const typeorm_1 = require("@nestjs/typeorm");
-const typeorm_2 = require("typeorm");
-const test_module_1 = require("./resource/test/test.module");
-const auth_module_1 = require("./resource/auth/auth.module");
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-const books_controller_1 = require("./books/books.controller");
-const books_service_1 = require("./books/books.service");
-=======
->>>>>>> f2f5083d7862fa151514d356db21cf4c8c247861
->>>>>>> 93064e37ad8944bc44f33b31283bd11a76a6f5e2
-=======
 const config_1 = require("@nestjs/config");
+const nest_access_control_1 = require("nest-access-control");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const app_service_1 = require("./app.service");
-const app_controller_1 = require("./app.controller");
+const App_roles_1 = require("./roles/App.roles");
 const auth_module_1 = require("./resource/auth/auth.module");
 const room_module_1 = require("./resource/room/room.module");
->>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
 let AppModule = class AppModule {
     constructor(connection) {
         this.connection = connection;
@@ -43,28 +26,6 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     common_1.Module({
         imports: [
-<<<<<<< HEAD
-            typeorm_1.TypeOrmModule.forRoot({
-                type: 'mysql',
-                host: '34.64.164.83',
-                port: 3306,
-                username: 'root',
-                password: 'cse',
-                database: 'pnu-extension',
-                entities: [__dirname + '/**/*.entity{.ts,.js}'],
-            }),
-            test_module_1.TestModule,
-            auth_module_1.AuthModule
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        ],
-        controllers: [app_controller_1.AppController, books_controller_1.BooksController],
-        providers: [app_service_1.AppService, books_service_1.BooksService],
-=======
->>>>>>> f2f5083d7862fa151514d356db21cf4c8c247861
->>>>>>> 93064e37ad8944bc44f33b31283bd11a76a6f5e2
-=======
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
@@ -75,15 +36,12 @@ AppModule = __decorate([
                 database: 'doldari',
                 timezone: 'Asia/Seoul',
                 synchronize: true,
-                autoLoadEntities: true
+                autoLoadEntities: true,
             }),
+            nest_access_control_1.AccessControlModule.forRoles(App_roles_1.roles),
             auth_module_1.AuthModule,
             room_module_1.RoomModule,
->>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
->>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
     }),
     __metadata("design:paramtypes", [typeorm_2.Connection])
 ], AppModule);

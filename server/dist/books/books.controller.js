@@ -19,7 +19,7 @@ let BooksController = class BooksController {
     constructor(booksService) {
         this.booksService = booksService;
     }
-    getAll() {
+    async getAll() {
         return this.booksService.getAll();
     }
     async findOne(id) {
@@ -39,7 +39,7 @@ __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], BooksController.prototype, "getAll", null);
 __decorate([
     common_1.Get(':id'),

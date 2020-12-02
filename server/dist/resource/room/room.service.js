@@ -43,10 +43,10 @@ let RoomService = class RoomService {
         return this.RoomRepository.save(roomData);
     }
     async updateRoom(roomData) {
-        const { roomId, createdAt, name, content, userId, price } = roomData;
+        const { roomId, createdAt, name, content, userId, price, } = roomData;
         const result = await this.RoomRepository
             .update({ roomId }, {
-            createdAt, name, content, userId, price
+            createdAt, name, content, userId, price,
         });
         return result.affected;
     }
