@@ -14,6 +14,7 @@ import Healthpage from './pages/health/Healthpage';
 import BookDetail from './organisms/books/components/BookDetail';
 import HealthView from './pages/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
+import Roomdetail from './pages/rooms/Roomdetail';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,6 +62,7 @@ function App(): JSX.Element {
             <Route exact path="/" component={Mainpage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/rooms" component={Roompage} />
+            <Route exact path="/rooms/Roomdetail" component={Roomdetail} />
             <Route exact path="/books" component={Bookpage} />
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
