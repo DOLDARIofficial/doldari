@@ -16,6 +16,7 @@ const typeorm_2 = require("typeorm");
 const config_1 = require("@nestjs/config");
 const nest_access_control_1 = require("nest-access-control");
 const App_roles_1 = require("./roles/App.roles");
+const books_module_1 = require("./resource/books/books.module");
 const auth_module_1 = require("./resource/auth/auth.module");
 const room_module_1 = require("./resource/room/room.module");
 let AppModule = class AppModule {
@@ -41,6 +42,7 @@ AppModule = __decorate([
             nest_access_control_1.AccessControlModule.forRoles(App_roles_1.roles),
             auth_module_1.AuthModule,
             room_module_1.RoomModule,
+            books_module_1.BookModule,
         ],
     }),
     __metadata("design:paramtypes", [typeorm_2.Connection])

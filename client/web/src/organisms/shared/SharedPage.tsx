@@ -6,6 +6,7 @@ import {
 import useAxios from 'axios-hooks';
 import moment from 'moment';
 import Checkboxes from './Checkboxes';
+
 // import { Room } from '../../../../../server/src/resource/room/interfaces/room.interface';
 
 export interface Room{
@@ -81,7 +82,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SharedPage(): JSX.Element {
   const [, executePost] = useAxios(
-    { url: '/room', method: 'post' }, { manual: true },
+    { url: '/book', method: 'post' }, { manual: true },
+  );
+
+  const [searchData, executeGet] = useAxios(
+    { url: 'https://dapi.kakao.com/v3/search/book', headers: { Authorization: 'KakaoAK 1ce3f349d77a34fc0439b421bceafbc9' }, method: 'get' }, { manual: true },
   );
 
   // const authContext = React.useContext();
@@ -92,21 +97,10 @@ export default function SharedPage(): JSX.Element {
     state: '정상',
   });
 
-  // const [state, setState] = React.useState({
-  //   checkedA: false,
-  //   checkedB: false,
-  //   checkedF: false,
-  //   checkedG: false,
-  // });
-
-  // const handleChange = (event: any) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // // 각 데이터를 저장하는 handler함수들
+  // const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setDataSource({ ...dataSource, name: event.target.value });
   // };
-
-  // 각 데이터를 저장하는 handler함수들
-  const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDataSource({ ...dataSource, name: event.target.value });
-  };
 
   const handleState = (event: any) => {
     setDataSource({ ...dataSource, state: '' });
@@ -133,6 +127,22 @@ export default function SharedPage(): JSX.Element {
       console.log(data);
     });
   }
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const param: string = event.target.value;
+    if (param !== '') {
+      console.log(param);
+      executeGet({
+        data: {
+          query: param,
+        },
+      }).then(() => {
+        console.log(searchData);
+      }).catch((err) => {
+        console.log(err.message);
+      });
+    }
+  };
 
   const classes = useStyles();
   return (
@@ -164,7 +174,7 @@ export default function SharedPage(): JSX.Element {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-              onChange={handleName}
+              onChange={handleSearch}
             />
             <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
           </div>
@@ -177,8 +187,8 @@ export default function SharedPage(): JSX.Element {
         </Grid>
 
         <Checkboxes title="책 내부" handleState={handleState} />
-        <Checkboxes title="책 외부" handleState={handleState} />
-        <Checkboxes title="거래방법" handleState={handleState} />
+        {/* <Checkboxes title="책 외부" handleState={handleState}/>
+        <Checkboxes title="거래방법" handleState={handleState}/> */}
 
         <Grid item xs={1} style={{ paddingTop: 30, paddingBottom: 10, justifyContent: 'left' }}>
           <Typography variant="h6" className={classes.bluefont}>

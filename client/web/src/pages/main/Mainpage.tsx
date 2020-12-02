@@ -2,6 +2,7 @@ import React from 'react';
 // import useAxios from 'axios-hooks';
 import SearchInput from '../../organisms/main/SearchInput';
 import Appbar from '../../organisms/shared/Appbar';
+import WordCloud from '../shared/WordCloud';
 
 export default function Mainpage(): JSX.Element {
   // const [data, executeGet] = useAxios(
@@ -15,7 +16,9 @@ export default function Mainpage(): JSX.Element {
       }}
       >
         <SearchInput />
-
+        <div>
+          <WordCloud />
+        </div>
       </div>
     </div>
   );

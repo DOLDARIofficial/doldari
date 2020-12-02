@@ -19,7 +19,7 @@ let BookList = class BookList {
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], BookList.prototype, "Id", void 0);
+], BookList.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
@@ -27,15 +27,55 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], BookList.prototype, "writer", void 0);
+], BookList.prototype, "contents", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "url", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "isbn", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "datetime", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Array)
+], BookList.prototype, "authors", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], BookList.prototype, "publisher", void 0);
 __decorate([
     typeorm_1.Column(),
+    __metadata("design:type", Array)
+], BookList.prototype, "translators", void 0);
+__decorate([
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], BookList.prototype, "price", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "thumbnail", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "description", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "createdAt", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "userId", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], BookList.prototype, "state", void 0);
 BookList = __decorate([
     typeorm_1.Entity({ name: 'Book' }),
     __metadata("design:paramtypes", [Object])
