@@ -29,6 +29,18 @@ const useStyles = makeStyles(() => createStyles({
     color: '#f5a1a1',
     fontSize: '24px',
   },
+  solution: {
+    width: '1320px',
+    height: '365px',
+    marginTop: '40px',
+    borderRadius: '40px',
+  },
+  paper: {
+    width: '1320px',
+    height: '1177px',
+    padding: '40px',
+    borderRadius: '40px',
+  },
 }));
 
 export default function BookDetail(): JSX.Element {
@@ -36,7 +48,7 @@ export default function BookDetail(): JSX.Element {
   return (
     <div style={{ color: 'primary', padding: 100, paddingTop: 150 }}>
       <Appbar />
-      <Paper>
+      <Paper className={classes.paper}>
         <Grid container>
           <Typography variant="subtitle2" style={{ marginTop: 40, marginLeft: 55 }} className={classes.textprimary}>
             판매일자 2020.12.25
@@ -151,6 +163,18 @@ export default function BookDetail(): JSX.Element {
               </Grid>
             </Paper>
           </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.solution}>
+        <Grid container>
+          <Paper>
+            <Typography>
+              1. solution 1
+            </Typography>
+            <Typography>
+              2. solution 2
+            </Typography>
+          </Paper>
         </Grid>
       </Paper>
     </div>
