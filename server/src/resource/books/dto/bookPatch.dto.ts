@@ -19,7 +19,7 @@ export class BookPatchDto {
   authors: string[];
 
   @IsString()
-  translators: string[];
+  translators: string;
 
   @IsString()
   isbn: string;

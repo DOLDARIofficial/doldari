@@ -35,11 +35,11 @@ __decorate([
 ], BookDto.prototype, "price", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookDto.prototype, "authors", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookDto.prototype, "translators", void 0);
 __decorate([
     class_validator_1.IsString(),
