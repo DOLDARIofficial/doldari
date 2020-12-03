@@ -1,5 +1,111 @@
 {
 <<<<<<< HEAD
+  "workbench.iconTheme": "material-icon-theme",
+  // typescript semantic highlighting
+  "editor.semanticHighlighting.enabled": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  // eslint config
+  "eslint.packageManager": "yarn",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+
+  "files.autoSave": "onFocusChange",
+  "prettier.disableLanguages": ["ts"],
+  // 검색시 검색되지 않을 파일 및 디렉토리 설정
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/yarn.lock": true,
+    "**/*.log": true
+  },
+  // material-icon-theme config
+  "material-icon-theme.files.associations": {
+    "*.pipe.ts": "nest-pipe",
+    "*.guard.ts": "nest-guard",
+    "*.controller.ts": "nest-controller",
+    "*.module.ts": "nest-module",
+    "*.service.ts": "nest-service",
+    "*.middleware.ts": "nest-middleware",
+    "*.filter.ts": "nest-filter",
+    "*.interface.ts": "typescript-def",
+    "*.dto.ts": "nest-resolver",
+    "*.strategy.ts": "key",
+    "*.entity.ts": "sequelize",
+    "*.config.ts": "settings",
+    "*.style.ts": "css"
+  },
+  "material-icon-theme.folders.associations": {
+    "interfaces": "typescript",
+    "atoms": "react-components",
+    "organisms": "core",
+    "dto": "delta",
+    "strategies": "keys",
+    "entities": "database"
+  },
+  "window.zoomLevel": 2,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.automationShell.linux": "/bin/zsh",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.automationShell.windows": "/bin/zsh",
+  "terminal.integrated.shell.windows": "/bin/zsh",
+  "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
+  "terminal.integrated.fontSize": 12,
+  "workbench.editorAssociations": [],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command",
+    "switch:command",
+    "switch:menu"
+  ],
+  "python.linting.enabled": false,
+  "python.terminal.launchArgs": [],
+  "terminal.external.osxExec": "iTerm.app",
+  "notebook.kernelProviderAssociations": [],
+  "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "json.schemas": []
+}
+=======
     "workbench.iconTheme": "material-icon-theme",
     // typescript semantic highlighting
     "editor.semanticHighlighting.enabled": true,
@@ -105,6 +211,4 @@
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "json.schemas": []
   }
-=======
-}
->>>>>>> 93064e37ad8944bc44f33b31283bd11a76a6f5e2
+>>>>>>> ddedc4d3420d84856e7af8aa3965f34b690fe3e8

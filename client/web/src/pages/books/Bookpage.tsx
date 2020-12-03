@@ -4,6 +4,7 @@ import React from 'react';
 import Appbar from '../../organisms/shared/Appbar';
 import GridTool from '../../organisms/books/Contents';
 import PaginationLink from '../../organisms/books/Bookpagenation';
+import Tabbar from '../../organisms/shared/Tabbar';
 
 export default function Books(): JSX.Element {
   return (
@@ -11,6 +12,7 @@ export default function Books(): JSX.Element {
       paddingRight: 100, paddingLeft: 100, paddingTop: 150, paddingBottom: 100, color: '#d0dcf5', justifyContent: 'center', alignItems: 'center',
     }}
     >
+      <Tabbar />
       <Appbar />
       <Paper variant="outlined">
         <Grid container spacing={3} style={{ alignContent: 'center' }}>

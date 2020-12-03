@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const typeorm_1 = require("@nestjs/typeorm");
-const typeorm_2 = require("typeorm");
 const config_1 = require("@nestjs/config");
 const nest_access_control_1 = require("nest-access-control");
+const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_2 = require("typeorm");
 const App_roles_1 = require("./roles/App.roles");
 const books_module_1 = require("./resource/books/books.module");
 const auth_module_1 = require("./resource/auth/auth.module");

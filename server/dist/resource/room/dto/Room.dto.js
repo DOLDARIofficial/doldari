@@ -42,4 +42,4 @@ __decorate([
     __metadata("design:type", String)
 ], RoomDto.prototype, "state", void 0);
 exports.RoomDto = RoomDto;
-//# sourceMappingURL=room.dto.js.map
+//# sourceMappingURL=Room.dto.js.map
