@@ -5,9 +5,7 @@ import {
 } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import {
-  Button, createStyles,
-} from '@material-ui/core';
+import { Button, createStyles } from '@material-ui/core';
 import Appbar from '../../../shared/Appbar';
 
 const theme = createMuiTheme();
@@ -39,14 +37,14 @@ export default function BookDetail(): JSX.Element {
       <Appbar />
       <Paper>
         <Grid container>
-          <Typography variant="subtitle2" style={{ marginTop: 40, marginLeft: 75 }} className={classes.textprimary}>
+          <Typography variant="subtitle2" style={{ marginTop: 40, marginLeft: 55 }} className={classes.textprimary}>
             판매일자 2020.12.25
           </Typography>
         </Grid>
-        <Grid container spacing={2} style={{ marginLeft: 70, marginTop: 1 }}>
+        <Grid container spacing={2} style={{ marginLeft: 50, marginTop: 1 }}>
           <Grid item>
             <Paper elevation={0}>
-              <img src="bookimg.jpg" width="200px" height="250px" alt="?" />
+              <img src="bookimg.png" width="200px" height="250px" alt="?" />
             </Paper>
           </Grid>
           <Grid item xs={12} sm container>
@@ -80,16 +78,16 @@ export default function BookDetail(): JSX.Element {
                     <p style={{ color: 'gray' }}><del>21000</del></p>
                   </Typography>
                 </Grid>
-                <Grid item style={{ paddingLeft: 900 }}>
+                <Grid item>
                   <Button>
-                    <img src="/sale.png" height="50" alt="?" />
+                    <img src="sale.png" height="30" alt="?" />
                   </Button>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Grid container style={{ paddingLeft: 90, paddingTop: 20 }}>
+        <Grid container style={{ paddingLeft: 70, paddingTop: 20 }}>
           <Grid item>
             <Typography variant="h6" style={{ color: 'skyblue', fontFamily: 'delivery', marginLeft: '50' }}>
               책상태
@@ -98,7 +96,7 @@ export default function BookDetail(): JSX.Element {
         </Grid>
         <Grid container spacing={2}>
           <Grid item>
-            <Paper elevation={0} style={{ marginLeft: 120 }}>
+            <Paper elevation={0} style={{ marginLeft: 100 }}>
               <p>
                 책 내부
                 {' '}
@@ -138,16 +136,16 @@ export default function BookDetail(): JSX.Element {
                     width: 250, height: 250, marginLeft: 50,
                   }}
                 >
-                  <img src="/bookimg.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="/bookimg.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="/bookimg.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item>
-                  <img src="/bookimg.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
               </Grid>
             </Paper>
