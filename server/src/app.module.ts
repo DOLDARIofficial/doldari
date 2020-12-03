@@ -10,6 +10,7 @@ import { roles } from './roles/App.roles';
 
 // modules
 // import { TestModule } from './resource/test/test.module';
+import { BookModule } from './resource/books/books.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
 // import { RoomEntity } from './resource/room/entities/room.entitiy';
@@ -34,6 +35,7 @@ import { RoomModule } from './resource/room/room.module';
     AccessControlModule.forRoles(roles),
     AuthModule,
     RoomModule,
+    BookModule,
   ],
 })
 

@@ -5,20 +5,49 @@ import {
 
 interface checkprops {
   title: string;
-  handleState: (event: any) => void;
+  handleState: (d: any) => void;
 }
 export default function Checkboxes(item: checkprops): JSX.Element {
   const { title, handleState } = item;
-  const [state] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedF: false,
-    checkedG: false,
+  const [isUnderline, setStateA] = React.useState(' ');
+  const [isWrite, setStateB] = React.useState(' ');
+  const [check, setCheck] = React.useState({
+    checkA: false,
+    checkB: false,
   });
 
-  // const handleChange = (event: any) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
+  const handleUnderline = (event: any) => {
+    console.log(event.target.checked);
+    if (event.target.checked) {
+      setCheck({ ...check, checkB: true });
+      setStateA('밑줄');
+    } else {
+      setCheck({ ...check, checkB: false });
+      setStateA('');
+    }
+    console.log(isUnderline);
+  };
+
+  const handleWrite = (event: any) => {
+    console.log(event.target.checked);
+    if (event.target.checked) {
+      setCheck({ ...check, checkA: true });
+      setStateB('필기');
+    } else {
+      setCheck({ ...check, checkA: false });
+      setStateB('');
+    }
+    console.log(isUnderline);
+  };
+
+  // const handleCheck = (event: any) => {
+  //   setCheck({ ...check, [event.target.name]: event.target.checked });
   // };
+
+  React.useEffect(() => {
+    handleState(`${isWrite},${isUnderline}`);
+    console.log(`${isWrite},${isUnderline}`);
+  }, [isWrite, isUnderline]);
 
   return (
     <Grid container spacing={2} style={{ alignItems: 'center', paddingLeft: 20 }}>
@@ -29,22 +58,24 @@ export default function Checkboxes(item: checkprops): JSX.Element {
       </Grid>
       <Grid item>
         <FormGroup row>
-          <FormControlLabel
+          {/* <FormControlLabel
             control={(
               <Checkbox
-                checked={state.checkedA}
-                onChange={handleState}
+                checked={check}
+                onChange={handleNone}
                 name="checkedA"
                 color="primary"
               />
         )}
             label="없음"
-          />
+          /> */}
           <FormControlLabel
             control={(
               <Checkbox
-                checked={state.checkedB}
-                onChange={handleState}
+                checked={check.checkA}
+                onChange={
+                  handleWrite
+                }
                 name="checkedB"
                 color="primary"
               />
@@ -54,8 +85,8 @@ export default function Checkboxes(item: checkprops): JSX.Element {
           <FormControlLabel
             control={(
               <Checkbox
-                checked={state.checkedF}
-                onChange={handleState}
+                checked={check.checkB}
+                onChange={handleUnderline}
                 name="checkedF"
                 color="primary"
               />

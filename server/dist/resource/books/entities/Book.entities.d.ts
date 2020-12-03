@@ -1,10 +1,19 @@
 import { Book } from '../interfaces/book.interface';
 export declare class BookList implements Book {
-    Id: number;
+    id: number;
     title: string;
-    writer: string;
+    contents: string;
+    url: string;
+    isbn: string;
+    datetime: string;
+    authors: string[];
     publisher: string;
+    translators: string[];
     price: number;
+    thumbnail: string;
+    description: string;
+    createdAt: string;
+    userId: string;
+    state: string;
     constructor(partial: Partial<BookList>);
-    seller: string;
 }
