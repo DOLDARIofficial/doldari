@@ -40,13 +40,13 @@ export class BookList implements Book {
    datetime: string;
 
    @Column()
-   authors: string[];
+   authors: string;
 
    @Column()
    publisher: string;
 
    @Column()
-   translators: string[];
+   translators: string;
 
    @Column()
    price: number;

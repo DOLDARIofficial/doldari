@@ -6,9 +6,9 @@ export declare class BookList implements Book {
     url: string;
     isbn: string;
     datetime: string;
-    authors: string[];
+    authors: string;
     publisher: string;
-    translators: string[];
+    translators: string;
     price: number;
     thumbnail: string;
     description: string;

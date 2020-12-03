@@ -42,7 +42,7 @@ __decorate([
 ], BookList.prototype, "datetime", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookList.prototype, "authors", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -50,7 +50,7 @@ __decorate([
 ], BookList.prototype, "publisher", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookList.prototype, "translators", void 0);
 __decorate([
     typeorm_1.Column(),

@@ -19,10 +19,10 @@ export class BookDto {
   price: number;
 
   @IsString()
-  authors: string[];
+  authors: string;
 
   @IsString()
-  translators: string[];
+  translators: string;
 
   @IsString()
   userId: string;

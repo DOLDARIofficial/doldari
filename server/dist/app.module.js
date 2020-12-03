@@ -30,7 +30,7 @@ AppModule = __decorate([
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'database-1.cgdowelkhyep.us-east-2.rds.amazonaws.com',
+                host: 'database-1.cebn0tm9t8p4.us-east-2.rds.amazonaws.com',
                 port: 3306,
                 username: 'admin',
                 password: '00000000',
