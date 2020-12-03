@@ -1,19 +1,13 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
-  makeStyles, createMuiTheme, ThemeProvider,
+  makeStyles, createMuiTheme, ThemeProvider, createStyles,
 } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-<<<<<<< HEAD
 
+import { Button } from '@material-ui/core';
 import Appbar from '../../shared/Appbar';
-=======
-import {
-  Button, createStyles,
-} from '@material-ui/core';
-import Appbar from '../../../shared/Appbar';
->>>>>>> 4d727006292331c84d80668e57c661f600b8e3b2
 
 const theme = createMuiTheme();
 
