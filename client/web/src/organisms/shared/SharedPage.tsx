@@ -3,6 +3,7 @@ import React from 'react';
 import {
   TextField, Grid, Typography, InputBase, makeStyles, fade, Paper, Button,
 } from '@material-ui/core';
+import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import useAxios from 'axios-hooks';
 import moment from 'moment';
 import Checkboxes from './Checkboxes';
@@ -78,16 +79,62 @@ const useStyles = makeStyles((theme) => ({
       width: '20ch',
     },
   },
+  listbox: {
+    width: 200,
+    margin: 0,
+    padding: 0,
+    zIndex: 1,
+    position: 'absolute',
+    listStyle: 'none',
+    backgroundColor: theme.palette.background.paper,
+    overflow: 'auto',
+    maxHeight: 200,
+    border: '1px solid rgba(0,0,0,.25)',
+    '& li[data-focus="true"]': {
+      backgroundColor: '#4a8df6',
+      color: 'white',
+      cursor: 'pointer',
+    },
+    '& li:active': {
+      backgroundColor: '#2977f5',
+      color: 'white',
+    },
+  },
 }));
+
+const dummy = [
+  { title: '책', year: null },
+];
 
 export default function SharedPage(): JSX.Element {
   const [, executePost] = useAxios(
-    { url: '/book', method: 'post' }, { manual: true },
+    { url: '/books', method: 'post' }, { manual: true },
   );
+  const [query, setQuery] = React.useState(' ');
+
+  const [bookList, setList] = React.useState(dummy);
 
   const [searchData, executeGet] = useAxios(
-    { url: 'https://dapi.kakao.com/v3/search/book', headers: { Authorization: 'KakaoAK 1ce3f349d77a34fc0439b421bceafbc9' }, method: 'get' }, { manual: true },
+    { url: 'https://dapi.kakao.com/v3/search/book?target=title', headers: { Authorization: 'KakaoAK 1ce3f349d77a34fc0439b421bceafbc9' }, method: 'get' }, { manual: true },
   );
+
+  /* 
+     자동완성 검색을 위한 훅입니다.
+  */
+  const {
+    getRootProps,
+    getInputProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+  } = useAutocomplete({
+    id: 'use-autocomplete-demo',
+    options: bookList,
+    getOptionLabel: (option: any) => option.title,
+  });
+  // React.useEffect(() => {
+
+  // }, [bookList]);
 
   // const authContext = React.useContext();
   const [dataSource, setDataSource] = React.useState<Pick<Room, 'name' | 'price' | 'content'| 'state'>>({
@@ -130,14 +177,12 @@ export default function SharedPage(): JSX.Element {
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const param: string = event.target.value;
+    setQuery(param);
     if (param !== '') {
       console.log(param);
-      executeGet({
-        data: {
-          query: param,
-        },
-      }).then(() => {
-        console.log(searchData);
+      executeGet({ params: { query } }).then(() => {
+        setList(searchData.data.documents);
+        console.log(bookList);
       }).catch((err) => {
         console.log(err.message);
       });
@@ -166,17 +211,27 @@ export default function SharedPage(): JSX.Element {
         </Grid>
 
         <Grid item xs={11} style={{ paddingBottom: 30, justifyContent: 'left' }}>
-          <div className={classes.search}>
-            <InputBase
-              placeholder="ISBN 또는 책이름 검색..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-              onChange={handleSearch}
-            />
-            <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+          <div>
+            <div className={classes.search} {...getRootProps()}>
+              <InputBase
+                placeholder="ISBN 또는 책이름 검색..."
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+                onChange={handleSearch}
+                {...getInputProps()}
+              />
+              <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+            </div>
+            {groupedOptions.length > 0 ? (
+              <ul className={classes.listbox} {...getListboxProps()}>
+                {groupedOptions.map((option: any, index) => (
+                  <li {...getOptionProps({ option, index })}>{option.title}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </Grid>
 
