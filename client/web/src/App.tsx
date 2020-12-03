@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // pages
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import {
-  BrowserRouter, Route, Switch,
+  BrowserRouter, Route, Switch, withRouter,
 } from 'react-router-dom';
 import Roompage from './pages/rooms/Roompage';
 import Mainpage from './pages/main/Mainpage';
@@ -51,6 +51,7 @@ const theme = createMuiTheme({
 
 function App(): JSX.Element {
   const classes = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.content}>
@@ -76,4 +77,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default withRouter(App);

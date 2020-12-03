@@ -9,16 +9,15 @@ export default function Mainpage(): JSX.Element {
   //   { url: '/test', method: 'get' }, { manual: true },
   // );
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <Appbar />
       <div style={{
         padding: 300, display: 'flex', justifyContent: 'left',
       }}
       >
         <SearchInput />
-        <div>
-          <WordCloud />
-        </div>
+        <WordCloud />
+
       </div>
     </div>
   );
