@@ -46,7 +46,7 @@ export default function BookDetail(): JSX.Element {
         <Grid container spacing={2} style={{ marginLeft: 70, marginTop: 1 }}>
           <Grid item>
             <Paper elevation={0}>
-              <img src="/bookimg.jpg" width="200px" height="250px" alt="?" />
+              <img src="bookimg.jpg" width="200px" height="250px" alt="?" />
             </Paper>
           </Grid>
           <Grid item xs={12} sm container>
@@ -80,7 +80,7 @@ export default function BookDetail(): JSX.Element {
                     <p style={{ color: 'gray' }}><del>21000</del></p>
                   </Typography>
                 </Grid>
-                <Grid item style={{ paddingLeft: 600 }}>
+                <Grid item style={{ paddingLeft: 900 }}>
                   <Button>
                     <img src="/sale.png" height="50" alt="?" />
                   </Button>

@@ -133,22 +133,22 @@ export default function SharedPage(): JSX.Element {
       console.log(data);
     });
   }
+  /*
+  function handleSearch() {
+    const data: any = {
+      ...dataSource,
+    };
 
-  function searchBook() {
-    $('#search').click(() => {
-      $.ajax({
-        method: 'GET',
-        url: 'https://dapi.kakao.com/v3/search/book?target=title',
-
-        data: { query: $('#bookName').val() },
-        headers: { Authorization: 'KakaoAK 45d42122e98ac759a7bf1ecf6e3dee48' },
-      })
-        .done((msg) => {
-          console.log();
-        });
+    executeGet({ data }).then.call(() => {
+      console.log(data);
     });
   }
 
+  const [, executeGet] = useAxios(
+    { url: 'https://dapi.kakao.com/v3/search/book?target=title', headers: { Authorization: 'KakaoAk {45d42122e98ac759a7bf1ecf6e3dee48}' }, method: 'get' },
+    { manual: true },
+  );
+*/
   const classes = useStyles();
   return (
     <Paper
@@ -182,10 +182,11 @@ export default function SharedPage(): JSX.Element {
               }}
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleName}
+
             />
-            <Button onClick={searchBook}>
-              <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
-            </Button>
+
+            <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+
           </div>
         </Grid>
 
