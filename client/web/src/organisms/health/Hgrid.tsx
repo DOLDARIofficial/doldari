@@ -30,6 +30,28 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
+  y_img: {
+    position: 'absolute',
+    bottom: 25,
+    right: 10,
+    width: 50,
+  },
+  pricetag: {
+    color: '#F5A1A1',
+    fontSize: '28px',
+    textAlign: 'right',
+    fontWeight: 'bold',
+    float: 'right',
+
+  },
+  title: {
+    display: 'block',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    width: 320,
+
+  },
 
 }));
 
@@ -43,8 +65,9 @@ export default function Hgrid(): JSX.Element {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Button size="medium" component={Link} to="/heath_management/detail">
-                  <Typography gutterBottom variant="h6">
-                    (제목입니다) 피트니스 센터 양도합니다!
+                  <Typography className={classes.title} gutterBottom variant="h6">
+                    (제목입니다) 피트니스 센터 양도합니다! 길면 사라집니다.
+                    {/* {data.title} */}
                   </Typography>
                 </Button>
 
@@ -79,13 +102,13 @@ export default function Hgrid(): JSX.Element {
           <Grid item>
             <ButtonBase className={classes.image} component={Link} to="/heath_management/detail">
               <img className={classes.img} alt="complex" src="2.png" />
+              <img className={classes.y_img} alt="complex" src="yang.png" />
             </ButtonBase>
-            <Grid>
-              <img alt="complex" src="812.png" />
-            </Grid>
+
             <Grid item>
-              <Typography variant="subtitle1">50000원</Typography>
+              <Typography className={classes.pricetag}>50000원</Typography>
             </Grid>
+
           </Grid>
         </Grid>
       </Paper>

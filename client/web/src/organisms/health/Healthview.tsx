@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 150,
   },
   image: {
-    width: 150,
-    height: 125,
+    width: 200,
+    height: 200,
   },
   img: {
     display: 'block',
@@ -30,6 +30,18 @@ const useStyles = makeStyles((theme) => ({
   },
   control: {
     padding: theme.spacing(2),
+  },
+  img_s: {
+    width: 150,
+
+  },
+  text: {
+    textAlign: 'right',
+    fontWeight: 'bold',
+    color: '#F5A1A1',
+    verticalAlign: 'middle',
+    fontSize: 25,
+    marginTop: 30,
   },
 }));
 
@@ -42,85 +54,92 @@ export default function HealthView(): JSX.Element {
   // };
 
   return (
-    <div className={classes.root}>
+    <div style={{
+      paddingRight: 100, paddingLeft: 220, paddingTop: 100, color: '#d0dcf5',
+    }}
+    >
       <ButtonAppBar />
       <Htop />
-      <div style={{ width: '70%', margin: '20px auto' }}>
-        <Paper className={classes.paper} variant="outlined">
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography color="textSecondary">판매 등록일</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography color="textSecondary">2020.11.22</Typography>
-                </Grid>
+
+      <Paper className={classes.paper} variant="outlined" style={{ padding: 50 }}>
+        <Grid container className={classes.root} spacing={2}>
+          <Grid item xs={12}>
+            <Grid container justify="flex-start" spacing={2}>
+              <Grid item>
+                <Typography color="textSecondary">판매 등록일</Typography>
+              </Grid>
+              <Grid item>
+                <Typography color="textSecondary">2020.11.22</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Typography variant="h5">(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>위치</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>네버랜드 112동</Typography>
-                </Grid>
+        </Grid>
+        <Typography variant="h5">(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
+        <Grid container className={classes.root} spacing={2}>
+          <Grid item xs={12}>
+            <Grid container justify="flex-start" spacing={2}>
+              <Grid item>
+                <Typography>위치</Typography>
+              </Grid>
+              <Grid item>
+                <Typography>네버랜드 112동</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>양도금</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>없음</Typography>
-                </Grid>
+        </Grid>
+        <Grid container className={classes.root} spacing={2}>
+          <Grid item xs={12}>
+            <Grid container justify="flex-start" spacing={2}>
+              <Grid item>
+                <Typography>양도금</Typography>
+              </Grid>
+              <Grid item>
+                <Typography>없음</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>기한</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>3개월</Typography>
-                </Grid>
+        </Grid>
+        <Grid container className={classes.root} spacing={2}>
+          <Grid item xs={12}>
+            <Grid container justify="flex-start" spacing={2}>
+              <Grid item>
+                <Typography>기한</Typography>
+              </Grid>
+              <Grid item>
+                <Typography>3개월</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography variant="h5">210,000원</Typography>
-                </Grid>
-                <Grid item>
-                  <img src="/sale.png" alt="이미지" />
-                </Grid>
-              </Grid>
-            </Grid>
+        </Grid>
+
+        <Grid container spacing={2} style={{ }}>
+          <Grid item>
+            <Typography className={classes.text}>210,000원</Typography>
           </Grid>
-          <Grid>
-            콘텐츠 내용 들어갑니다
+          <Grid item>
+            <img src="/sale.png" alt="이미지" className={classes.img_s} />
           </Grid>
-          <img src="/2.png" alt="이미지" />
-          <Typography>지도보기</Typography>
-          <Typography>
-            <img src="/loca.png" alt="이미지" />
-            부산대학교
-          </Typography>
-          <Typography>부산광역시 금정구 부산대학로 63번길 2</Typography>
-          <img src="/map.png" alt="이미지" />
-        </Paper>
-      </div>
+        </Grid>
+
+        <Grid>
+          콘텐츠 내용 들어갑니다
+        </Grid>
+        <div style={{ padding: 40 }}>
+          <img className={classes.image} src="/s-img.png" alt="이미지" style={{ marginRight: 30 }} />
+          <img className={classes.image} src="/s-img.png" alt="이미지" style={{ marginRight: 30 }} />
+          <img className={classes.image} src="/s-img.png" alt="이미지" style={{ marginRight: 30 }} />
+          <img className={classes.image} src="/s-img.png" alt="이미지" />
+        </div>
+
+        <Typography>지도보기</Typography>
+        <Typography>
+          <img src="/loca.png" alt="이미지" />
+          부산대학교
+        </Typography>
+        <Typography>부산광역시 금정구 부산대학로 63번길 2</Typography>
+        <img src="/map.png" alt="이미지" />
+      </Paper>
+
     </div>
   );
 }

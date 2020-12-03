@@ -46,7 +46,7 @@ function a11yProps(index: any) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#a1bdf5',
+    backgroundColor: '##87abf5',
     alignContent: 'center',
     alignItems: 'center',
 

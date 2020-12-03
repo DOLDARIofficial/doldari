@@ -15,6 +15,7 @@ import BookDetail from './organisms/books/components/BookDetail';
 
 import HealthView from './organisms/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
+import Hupload from './organisms/health/Hupload';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       // Purple and green play nicely together.
-      main: '#90caf9',
+      main: '#87abf5',
     },
     secondary: {
       // This is green.A700 as hex.
@@ -68,6 +69,7 @@ function App(): JSX.Element {
             <Route exact path="/shared_page" component={DetailPage} />
             <Route exact path="/shared_page" component={BookDetail} />
             <Route exact path="/heath_management/detail" component={HealthView} />
+            <Route exact path="/heath_management/upload" component={Hupload} />
           </Switch>
 
         </BrowserRouter>
