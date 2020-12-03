@@ -9,7 +9,7 @@
 		"@typescript-eslint/parser": "^4.8.1",
 		"aws-cdk": "1.75.0",
 		"react-google-login": "^5.1.23",
-		"react-wordcloud": "1.2.7"
+		"react-wordcloud": "1.2.7",
 		"node-sass": "^5.0.0",
 		"react-google-login": "^5.1.23",
 		"swiper": "^6.3.5"

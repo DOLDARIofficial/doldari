@@ -3209,14 +3209,6 @@
       "../node_modules/class-validator/types/decorator/string/length.d.ts": {
         "version": "f08b724b61c71963f3902eb0974ecb4636f10628be53f8e6103183409c63f495",
         "signature": "f08b724b61c71963f3902eb0974ecb4636f10628be53f8e6103183409c63f495",
-      "../src/resource/room/interfaces/room.interface.ts": {
-        "version": "a7547699585fd9241648e4bfe0c89fa389c5792b1f1700cbce88828ed695b358",
-        "signature": "d9c33b227fb175b6769ed0aaf49d2bdb3b595d3fae7236ef31bc96c66a8c471c",
-        "affectsGlobalScope": false
-      },
-      "../src/resource/room/entities/room.entitiy.ts": {
-        "version": "5c579793a6b6e76411d30aad710eedc970abaff61369e78121f4793bca7429db",
-        "signature": "940deb0773ff47027bf834bcbd8461ed3e70871e2f07ec535bba157c6dde1d1c",
         "affectsGlobalScope": false
       },
       "../node_modules/class-validator/types/decorator/string/maxlength.d.ts": {
@@ -3860,7 +3852,7 @@
         "affectsGlobalScope": false
       },
       "../src/resource/room/interfaces/room.interface.ts": {
-        "version": "2e6d76dc210c4a9b0d72e506c8070a7f9ad363125ed377e92cf420219b371076",
+        "version": "a7547699585fd9241648e4bfe0c89fa389c5792b1f1700cbce88828ed695b358",
         "signature": "d9c33b227fb175b6769ed0aaf49d2bdb3b595d3fae7236ef31bc96c66a8c471c",
         "affectsGlobalScope": false
       },
@@ -3895,7 +3887,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "95280113e7ec22b4b1eedc2327090b7b4e3e7d517e98d48992689e910fe503af",
+        "version": "81487f80346e5b5d441b74eb08b48cf30c2ebb809b6b3c3671f2d537cc768457",
         "signature": "72ba1b6f51f679fef4130de0cef13456c2e316f3e9cf20467d45981a5609d917",
         "affectsGlobalScope": false
       },
@@ -3977,16 +3969,6 @@
       "../src/main.ts": {
         "version": "809cf21bac2a84c922d20efa1d1af0811f742f2a1ddaf92ba5c974e7e555e9dc",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/books/books.service.ts": {
-        "version": "dac147c44f01f25af0e6f61d059033100d039298a4c58e4694dba9e5031fb4c9",
-        "signature": "3a1f425cd420309efb49dc15b6d616f489e8f8e7f64c72c32fdeeb4660877fba",
-        "affectsGlobalScope": false
-      },
-      "../src/books/books.controller.ts": {
-        "version": "22ef6379672b12d62fafe039f3c436b258f951e3578922e92964d42828571353",
-        "signature": "fafa54e1eb2bf6cd7dcfde80ece5cfa426c2f48ab12365c036fb7bc3ee5c9eb4",
         "affectsGlobalScope": false
       },
       "../src/interfaces/doldari.interface.ts": {
@@ -11070,13 +11052,6 @@
         "../src/resource/room/room.module.ts",
         "../src/roles/app.roles.ts"
       ],
-      "../src/books/books.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/books/books.service.ts"
-      ],
-      "../src/books/books.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
       "../src/config/database.config.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
@@ -16437,9 +16412,6 @@
       "../src/app.module.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
-      "../src/books/books.controller.ts": [
-        "../src/books/books.service.ts"
-      ],
       "../src/config/database.config.ts": [
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts"
@@ -17629,6 +17601,7 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../src/app.module.ts",
       "../src/config/database.config.ts",
       "../src/config/jwt.config.ts",
       "../src/config/loadconfig.ts",
@@ -17647,9 +17620,14 @@
       "../src/resource/books/dto/bookpatch.dto.ts",
       "../src/resource/books/entities/book.entities.ts",
       "../src/resource/books/interfaces/book.interface.ts",
+      "../src/resource/room/dto/room.dto.ts",
       "../src/resource/room/dto/roomget.dto.ts",
       "../src/resource/room/dto/roompatch.dto.ts",
+      "../src/resource/room/entities/room.entitiy.ts",
       "../src/resource/room/interfaces/room.interface.ts",
+      "../src/resource/room/room.controller.ts",
+      "../src/resource/room/room.module.ts",
+      "../src/resource/room/room.service.ts",
       "../src/roles/app.roles.ts"
     ]
   },
