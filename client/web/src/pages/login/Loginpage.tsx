@@ -24,7 +24,7 @@ const googleLogin = async (response: any) => {
   // }
   console.log(response.profileObj);
 
-  window.location.href = 'http://localhost:3002/';
+  window.location.href = 'http://localhost:3000/';
 };
 
 const onFailure = (response: any) => {
@@ -42,7 +42,7 @@ const onFailure = (response: any) => {
 //   document.getElementById('googleButton')
 // );
 
-export default function GoogleLoginß(): JSX.Element {
+export default function Login(): JSX.Element {
   return (
     <Grid style={{
       paddingTop: 100, display: 'flex', justifyContent: 'center',
@@ -56,11 +56,11 @@ export default function GoogleLoginß(): JSX.Element {
       >
         <Grid container>
           <Grid item xs={12} style={{ paddingTop: 50, paddingLeft: 80, position: 'relative' }}>
-            <Typography style={{ fontSize: 20 }}>
+            <Typography style={{ fontSize: 30 }}>
               로그인
             </Typography>
           </Grid>
-          <Grid item style={{ paddingTop: 40, paddingLeft: 50, position: 'relative' }}>
+          <Grid item style={{ paddingTop: 60, paddingLeft: 80, position: 'relative' }}>
             <GoogleLogin
               clientId="822280945870-am3tfoa2vg72q6sabr7qi0ogoj9gast6.apps.googleusercontent.com"
               buttonText="Google 로그인"
