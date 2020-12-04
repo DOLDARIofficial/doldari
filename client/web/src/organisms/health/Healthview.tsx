@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(3),
+    paddingTop: 60,
+    paddingBottom: 60,
+    paddingLeft: 100,
+    paddingRight: 100,
     maxWidth: 1200,
     marginTop: 150,
   },
@@ -61,7 +64,7 @@ export default function HealthView(): JSX.Element {
       <ButtonAppBar />
       <Htop />
 
-      <Paper className={classes.paper} variant="outlined" style={{ padding: 50 }}>
+      <Paper className={classes.paper} variant="outlined">
         <Grid container className={classes.root} spacing={2}>
           <Grid item xs={12}>
             <Grid container justify="flex-start" spacing={2}>
@@ -74,12 +77,12 @@ export default function HealthView(): JSX.Element {
             </Grid>
           </Grid>
         </Grid>
-        <Typography variant="h5">(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
-        <Grid container className={classes.root} spacing={2}>
+        <Typography variant="h5" style={{ paddingTop: 10, paddingBottom: 20 }}>(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
+        <Grid container className={classes.root}>
           <Grid item xs={12}>
             <Grid container justify="flex-start" spacing={2}>
               <Grid item>
-                <Typography>위치</Typography>
+                <Typography color="textSecondary">위치</Typography>
               </Grid>
               <Grid item>
                 <Typography>네버랜드 112동</Typography>
@@ -87,11 +90,11 @@ export default function HealthView(): JSX.Element {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container className={classes.root}>
           <Grid item xs={12}>
             <Grid container justify="flex-start" spacing={2}>
               <Grid item>
-                <Typography>양도금</Typography>
+                <Typography color="textSecondary">양도금</Typography>
               </Grid>
               <Grid item>
                 <Typography>없음</Typography>
@@ -99,11 +102,11 @@ export default function HealthView(): JSX.Element {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container className={classes.root}>
           <Grid item xs={12}>
             <Grid container justify="flex-start" spacing={2}>
               <Grid item>
-                <Typography>기한</Typography>
+                <Typography color="textSecondary">기한</Typography>
               </Grid>
               <Grid item>
                 <Typography>3개월</Typography>
@@ -114,14 +117,14 @@ export default function HealthView(): JSX.Element {
 
         <Grid container spacing={2} style={{ }}>
           <Grid item>
-            <Typography className={classes.text}>210,000원</Typography>
+            <Typography className={classes.text}>2000원</Typography>
           </Grid>
           <Grid item>
             <img src="/sale.png" alt="이미지" className={classes.img_s} />
           </Grid>
         </Grid>
 
-        <Grid>
+        <Grid style={{ paddingTop: 20, paddingBottom: 10 }}>
           콘텐츠 내용 들어갑니다
         </Grid>
         <div style={{ padding: 40 }}>
