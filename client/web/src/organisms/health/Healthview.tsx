@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 100,
     maxWidth: 1200,
     marginTop: 150,
+    borderRadius: 40,
   },
   image: {
     width: 200,
@@ -80,7 +81,7 @@ export default function HealthView(): JSX.Element {
         <Typography variant="h5" style={{ paddingTop: 10, paddingBottom: 20 }}>(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
         <Grid container className={classes.root}>
           <Grid item xs={12}>
-            <Grid container justify="flex-start" spacing={2}>
+            <Grid container justify="flex-start" spacing={4}>
               <Grid item>
                 <Typography color="textSecondary">위치</Typography>
               </Grid>
@@ -104,7 +105,7 @@ export default function HealthView(): JSX.Element {
         </Grid>
         <Grid container className={classes.root}>
           <Grid item xs={12}>
-            <Grid container justify="flex-start" spacing={2}>
+            <Grid container justify="flex-start" spacing={4}>
               <Grid item>
                 <Typography color="textSecondary">기한</Typography>
               </Grid>

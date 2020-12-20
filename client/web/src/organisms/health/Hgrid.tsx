@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(3),
     maxWidth: 1200,
+
   },
   place: {
     flexBasis: '33.33%',
@@ -102,7 +103,7 @@ export default function Hgrid(): JSX.Element {
           <Grid item>
             <ButtonBase className={classes.image} component={Link} to="/heath_management/detail">
               <img className={classes.img} alt="complex" src="2.png" />
-              <img className={classes.y_img} alt="complex" src="yang.png" />
+              <img className={classes.y_img} alt="양도금포함" src="yang.png" />
             </ButtonBase>
 
             <Grid item>

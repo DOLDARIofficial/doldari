@@ -13,8 +13,13 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
+
+    /* 
+    margin: 33 35 45 300,
+    padding: 50 50 0, */
     maxWidth: 1200,
     marginTop: 150,
+    borderRadius: 40,
   },
   image: {
     width: 150,
