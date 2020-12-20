@@ -1,6 +1,5 @@
 import React from 'react';
 // import Sidebar from '../../organisms/rooms/Sidebar';
-
 import { makeStyles, Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 // import { Pagination } from './Pagination';
@@ -16,17 +15,22 @@ const useStyles = makeStyles((theme) => ({
     background: 'white',
   },
   paper: {
-    width: '100%',
+    marginTop: '80px',
+    borderRadius: '40px',
+  },
+  box: {
+    width: '1200',
     marginTop: '80px',
     paddingRight: theme.spacing(30),
     paddingLeft: theme.spacing(30),
   },
+
   grid: {
     textAlign: 'center',
   },
   img: {
-    width: 120,
-    height: 50,
+    width: 70,
+    height: 120,
     marginTop: '30px',
     paddingRight: theme.spacing(30),
     paddingLeft: theme.spacing(140),
@@ -76,21 +80,15 @@ export default function Roompage(): JSX.Element {
           <img alt="complex" src="transfer.png" />
         </Grid>
       </div>
-      <div className={classes.paper}>
-        <Paper elevation={0}>
+      <div className={classes.box}>
+        <Paper className={classes.paper} elevation={0}>
           <ItemSet data={dummy} />
           <ItemSet data={dummy} />
           <ItemSet data={dummy} />
           <ItemSet data={dummy} />
         </Paper>
       </div>
-      <div className="container">
-        {/* <Pagination
-          page={page}
-          totalPages={totalPages}
-          handlePagination={handlePages}
-        /> */}
-      </div>
+      <div className="container" />
     </>
   );
 }

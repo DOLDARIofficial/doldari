@@ -4,6 +4,18 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+export interface Book{
+  bookid: string;
+  title: string;
+  writer: string;
+  isbn: string;
+  price: number;
+  publisher: string;
+  date: Date;
+  userid: string;
+  state: string;
+}
+
 const useStyles = makeStyles((theme) => ({
   transparent: {
     background: '#00ff0000',

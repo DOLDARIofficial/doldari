@@ -25,7 +25,8 @@ const useStyles = makeStyles(() => createStyles({
     marginTop: 30,
   },
   img: {
-    width: 180,
+    width: 100,
+    height: 100,
   },
 }));
 
