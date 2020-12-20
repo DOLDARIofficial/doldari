@@ -5,8 +5,11 @@ import {
 } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { Button, createStyles } from '@material-ui/core';
-import Appbar from '../../../shared/Appbar';
+import {
+  Button, createStyles,
+} from '@material-ui/core';
+import Appbar from '../../shared/Appbar';
+
 
 const theme = createMuiTheme();
 
@@ -155,3 +158,4 @@ export default function BookDetail(): JSX.Element {
     </div>
   );
 }
+

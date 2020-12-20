@@ -20,8 +20,11 @@ const googleLogin = async (response: any) => {
   // try {
   //   return await axios(option);
   // } catch (e) {
-  //   throw e
+  //   throw e;
   // }
+  console.log(response.profileObj);
+
+  window.location.href = 'http://localhost:3002/';
 };
 
 const onFailure = (response: any) => {
@@ -52,12 +55,12 @@ export default function GoogleLoginß(): JSX.Element {
         elevation={0}
       >
         <Grid container>
-          <Grid item xs={12} style={{ paddingTop: 80, paddingLeft: 80, position: 'relative' }}>
+          <Grid item xs={12} style={{ paddingTop: 50, paddingLeft: 80, position: 'relative' }}>
             <Typography style={{ fontSize: 20 }}>
               로그인
             </Typography>
           </Grid>
-          <Grid item style={{ paddingLeft: 90, paddingTop: 80 }}>
+          <Grid item style={{ paddingTop: 40, paddingLeft: 50, position: 'relative' }}>
             <GoogleLogin
               clientId="822280945870-am3tfoa2vg72q6sabr7qi0ogoj9gast6.apps.googleusercontent.com"
               buttonText="Google 로그인"

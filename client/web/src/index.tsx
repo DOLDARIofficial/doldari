@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 import { Router, Route } from 'react-router-dom';
 import { configure } from 'axios-hooks';
 import App from './App';
-import axios from './utils/axios';
+import axios from './util/axios';
 
 const history: any = createBrowserHistory();
 configure({ axios });

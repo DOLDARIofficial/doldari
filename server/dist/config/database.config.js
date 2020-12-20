@@ -24,7 +24,7 @@ let TypeOrmConfigService = class TypeOrmConfigService {
             port: 3306,
             username: database.username,
             password: database.password,
-            database: 'rooms',
+            database: 'doldaridb',
             timezone: 'Asia/Seoul',
             synchronize: true,
             autoLoadEntities: true,

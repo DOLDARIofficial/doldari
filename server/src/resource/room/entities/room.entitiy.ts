@@ -1,5 +1,5 @@
 import {
-  Entity, Column, /* OneToOne, */PrimaryGeneratedColumn,
+  Entity, Column, PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Room } from '../interfaces/room.interface';
 

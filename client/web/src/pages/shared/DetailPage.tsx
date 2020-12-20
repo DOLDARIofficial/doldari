@@ -3,12 +3,11 @@ import SharedPage from '../../organisms/shared/SharedPage';
 import Appbar from '../../organisms/shared/Appbar';
 
 export default function DetailPage(): JSX.Element {
-  const state = true;
   return (
     <div>
-      <Appbar state={state} />
+      <Appbar />
       <div style={{
-        paddingTop: 100, display: 'flex', justifyContent: 'center',
+        paddingTop: 200, display: 'flex', justifyContent: 'center',
       }}
       >
         <SharedPage />

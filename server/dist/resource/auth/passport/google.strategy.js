@@ -15,13 +15,8 @@ const passport_google_oauth20_1 = require("passport-google-oauth20");
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("../auth.service");
 const config = {
-<<<<<<< HEAD
-    clientID: '652559907955-u17jnat6auvjqe1kcq6imhn67jdnppbl.apps.googleusercontent.com',
-    clientSecret: 'I4BRjcNIXF5quc3V5T3uKkiA',
-=======
     clientID: '822280945870-am3tfoa2vg72q6sabr7qi0ogoj9gast6.apps.googleusercontent.com',
     clientSecret: 'ivn2SYc6ASHZZcgvU9PNHKoc',
->>>>>>> c7f93c72c04663751a3486c27bcd5546255294c9
     callbackURL: 'http://localhost:3000/auth/google/callback',
     passReqToCallback: true,
     scope: ['email', 'profile'],

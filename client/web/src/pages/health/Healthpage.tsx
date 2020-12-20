@@ -4,7 +4,7 @@ import {
 } from '@material-ui/core';
 import Hgrid from '../../organisms/health/Hgrid';
 import Hpagenation from '../../organisms/health/Hpagenation';
-import ButtonAppBar from '../../shared/Appbar';
+import Appbar from '../../organisms/shared/Appbar';
 import Htop from '../../organisms/health/Htop';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(3),
     maxWidth: 1200,
-    marginTop: 150,
   },
   image: {
     width: 150,
@@ -32,9 +31,12 @@ export default function Healthpage(): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <ButtonAppBar />
+      <Appbar />
       <Htop />
-      <div style={{ width: '70%', margin: '0px auto' }}>
+      <div style={{
+        paddingTop: 100, display: 'flex', justifyContent: 'center',
+      }}
+      >
         <Paper className={classes.paper} variant="outlined">
           <Grid container spacing={2}>
             <Hgrid />

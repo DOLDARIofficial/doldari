@@ -6,6 +6,7 @@ import {
 import useAxios from 'axios-hooks';
 import moment from 'moment';
 import Checkboxes from './Checkboxes';
+
 // import { Room } from '../../../../../server/src/resource/room/interfaces/room.interface';
 
 export interface Room{
@@ -81,7 +82,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SharedPage(): JSX.Element {
   const [, executePost] = useAxios(
-    { url: 'http://localhost:3000/room', method: 'post' }, { manual: true },
+    { url: '/book', method: 'post' }, { manual: true },
+  );
+
+  const [searchData, executeGet] = useAxios(
+    { url: 'https://dapi.kakao.com/v3/search/book', headers: { Authorization: 'KakaoAK 1ce3f349d77a34fc0439b421bceafbc9' }, method: 'get' }, { manual: true },
   );
 
   // const authContext = React.useContext();
@@ -92,28 +97,17 @@ export default function SharedPage(): JSX.Element {
     state: '정상',
   });
 
-  // const [state, setState] = React.useState({
-  //   checkedA: false,
-  //   checkedB: false,
-  //   checkedF: false,
-  //   checkedG: false,
-  // });
-
-  // const handleChange = (event: any) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // // 각 데이터를 저장하는 handler함수들
+  // const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setDataSource({ ...dataSource, name: event.target.value });
   // };
-
-  // 각 데이터를 저장하는 handler함수들
-  const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDataSource({ ...dataSource, name: event.target.value });
-  };
 
   const handleState = (event: any) => {
     setDataSource({ ...dataSource, state: '' });
   };
 
   const handleContents = (event: any) => {
-    setDataSource({ ...dataSource, content: event });
+    setDataSource({ ...dataSource, content: event.target.value });
   };
 
   const handlePrice = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -128,8 +122,8 @@ export default function SharedPage(): JSX.Element {
       createdAt: moment(new Date()).format('lll'),
       roomId: 1,
     };
-    executePost({ data }).then().catch((err) => {
-      console.log(err);
+    executePost({ data: dataSource }).then().catch((err) => {
+      console.log(err.message);
       console.log(data);
     });
   }
@@ -139,16 +133,22 @@ export default function SharedPage(): JSX.Element {
       ...dataSource,
     };
 
-    executeGet({ data }).then.call(() => {
-      console.log(data);
-    });
-  }
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const param: string = event.target.value;
+    if (param !== '') {
+      console.log(param);
+      executeGet({
+        data: {
+          query: param,
+        },
+      }).then(() => {
+        console.log(searchData);
+      }).catch((err) => {
+        console.log(err.message);
+      });
+    }
+  };
 
-  const [, executeGet] = useAxios(
-    { url: 'https://dapi.kakao.com/v3/search/book?target=title', headers: { Authorization: 'KakaoAk {45d42122e98ac759a7bf1ecf6e3dee48}' }, method: 'get' },
-    { manual: true },
-  );
-*/
   const classes = useStyles();
   return (
     <Paper
@@ -181,7 +181,7 @@ export default function SharedPage(): JSX.Element {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-              onChange={handleName}
+              onChange={handleSearch}
 
             />
 
@@ -197,8 +197,8 @@ export default function SharedPage(): JSX.Element {
         </Grid>
 
         <Checkboxes title="책 내부" handleState={handleState} />
-        <Checkboxes title="책 외부" handleState={handleState} />
-        <Checkboxes title="거래방법" handleState={handleState} />
+        {/* <Checkboxes title="책 외부" handleState={handleState}/>
+        <Checkboxes title="거래방법" handleState={handleState}/> */}
 
         <Grid item xs={1} style={{ paddingTop: 30, paddingBottom: 10, justifyContent: 'left' }}>
           <Typography variant="h6" className={classes.bluefont}>
