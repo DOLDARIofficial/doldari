@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // pages
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import {
-  BrowserRouter, Route, Switch,
+  BrowserRouter, Route, Switch, withRouter,
 } from 'react-router-dom';
 import Roompage from './pages/rooms/Roompage';
 import Mainpage from './pages/main/Mainpage';
@@ -12,10 +12,10 @@ import Bookpage from './pages/books/Bookpage';
 import Login from './pages/login/Loginpage';
 import Healthpage from './pages/health/Healthpage';
 import BookDetail from './organisms/books/components/BookDetail';
-
-import HealthView from './organisms/health/Healthview';
+import HealthView from './pages/health/Healthview';
 import DetailPage from './pages/shared/DetailPage';
-import Hupload from './organisms/health/Hupload';
+import Roomdetail from './pages/rooms/Roomdetail';
+import Hupload from './pages/health/Hupload';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,9 +52,11 @@ const theme = createMuiTheme({
 
 function App(): JSX.Element {
   const classes = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.content}>
+
         <CssBaseline />
 
         <BrowserRouter>
@@ -63,11 +65,12 @@ function App(): JSX.Element {
             <Route exact path="/" component={Mainpage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/rooms" component={Roompage} />
+            <Route exact path="/rooms/Roomdetail" component={Roomdetail} />
             <Route exact path="/books" component={Bookpage} />
             <Route exact path="/books/detail" component={BookDetail} />
             <Route exact path="/health_management" component={Healthpage} />
             <Route exact path="/shared_page" component={DetailPage} />
-            <Route exact path="/shared_page" component={BookDetail} />
+            <Route exact path="/books/detail" component={BookDetail} />
             <Route exact path="/heath_management/detail" component={HealthView} />
             <Route exact path="/heath_management/upload" component={Hupload} />
           </Switch>
@@ -79,4 +82,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default withRouter(App);

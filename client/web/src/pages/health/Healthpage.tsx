@@ -5,7 +5,7 @@ import {
 import { Link } from 'react-router-dom';
 import Hgrid from '../../organisms/health/Hgrid';
 import Hpagenation from '../../organisms/health/Hpagenation';
-import ButtonAppBar from '../../shared/Appbar';
+import Appbar from '../../organisms/shared/Appbar';
 import Htop from '../../organisms/health/Htop';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +46,7 @@ export default function Healthpage(): JSX.Element {
       paddingRight: 100, paddingLeft: 220, paddingTop: 100, color: '#d0dcf5',
     }}
     >
-      <ButtonAppBar />
+      <Appbar />
       <Htop />
       <Button className={classes.img_t} size="medium" component={Link} to="/heath_management/upload">
         <img width="150" src="transfer.png" alt="양도하기" />

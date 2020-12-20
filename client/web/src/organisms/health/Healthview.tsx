@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 // import ButtonBase from '@material-ui/core/ButtonBase';
 // import Hgrid from '../../organisms/health/Hgrid';
 // import Hpagenation from '../../organisms/health/Hpagenation';
-import ButtonAppBar from '../../shared/Appbar';
+import ButtonAppBar from '../shared/Appbar';
 import Htop from './Htop';
 
 const useStyles = makeStyles((theme) => ({

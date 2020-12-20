@@ -1,13 +1,17 @@
 {
 	"dependencies": {
 		"@material-ui/icons": "4.9.1",
+		"@material-ui/lab": "4.0.0-alpha.56",
 		"@nestjs/jwt": "7.2.0",
 		"@types/react-dom": "^16.9.9",
 		"@types/react-router-dom": "^5.1.6",
 		"@typescript-eslint/eslint-plugin": "^4.8.1",
 		"@typescript-eslint/parser": "^4.8.1",
 		"aws-cdk": "1.75.0",
-		"react-google-login": "^5.1.23"
+		"node-sass": "^5.0.0",
+		"react-google-login": "^5.1.23",
+		"react-wordcloud": "^1.2.7",
+		"swiper": "^6.3.5"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "4.0.1",

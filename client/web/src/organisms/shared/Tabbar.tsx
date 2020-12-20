@@ -51,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
 
   },
+  tab: {
+    fontSize: 25,
+    color: '#FFFF',
+    mefinLeft: 100,
+  },
+
 }));
 
 export default function Tabbar(): JSX.Element {
@@ -65,9 +71,15 @@ export default function Tabbar(): JSX.Element {
     <div className={classes.root}>
       <AppBar position="static" className={classes.root}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="자취방/쉐어하우스" component={Link} to="/rooms" {...a11yProps(0)} />
-          <Tab label="헬스장 게시판" component={Link} to="/health_management" {...a11yProps(1)} />
-          <Tab label="책방" component={Link} to="/books" {...a11yProps(2)} />
+          <div style={{ justifyContent: 'space' }}>
+            <Tab label="자취방/쉐어하우스" component={Link} to="/rooms" {...a11yProps(0)} className={classes.tab} />
+            <Tab disabled />
+            <Tab disabled />
+            <Tab label="헬스장 게시판" component={Link} to="/health_management" {...a11yProps(1)} className={classes.tab} />
+            <Tab disabled />
+            <Tab disabled />
+            <Tab label="책방" component={Link} to="/books" {...a11yProps(2)} className={classes.tab} />
+          </div>
         </Tabs>
       </AppBar>
 

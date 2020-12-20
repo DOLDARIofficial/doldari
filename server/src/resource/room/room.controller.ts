@@ -6,7 +6,7 @@ import {
 import { RoomEntity } from './entities/room.entitiy';
 import { Room } from './interfaces/room.interface';
 import { RoomService } from './room.service';
-import { RoomDto } from './dto/room.dto';
+import { RoomDto } from './dto/Room.dto';
 // import {RoomGet} from './dto/RoomGet.dto';
 import { RoomPatchDto } from './dto/RoomPatch.dto';
 
