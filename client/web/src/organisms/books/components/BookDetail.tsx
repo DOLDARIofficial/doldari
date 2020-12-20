@@ -10,7 +10,6 @@ import {
 } from '@material-ui/core';
 import Appbar from '../../shared/Appbar';
 
-
 const theme = createMuiTheme();
 
 theme.typography.h3 = {
@@ -158,4 +157,3 @@ export default function BookDetail(): JSX.Element {
     </div>
   );
 }
-

@@ -13,7 +13,6 @@ exports.GoogleStrategy = void 0;
 const passport_1 = require("@nestjs/passport");
 const passport_google_oauth20_1 = require("passport-google-oauth20");
 const common_1 = require("@nestjs/common");
-const auth_service_1 = require("../auth.service");
 const config = {
     clientID: '822280945870-am3tfoa2vg72q6sabr7qi0ogoj9gast6.apps.googleusercontent.com',
     clientSecret: 'ivn2SYc6ASHZZcgvU9PNHKoc',
@@ -22,25 +21,27 @@ const config = {
     scope: ['email', 'profile'],
 };
 let GoogleStrategy = class GoogleStrategy extends passport_1.PassportStrategy(passport_google_oauth20_1.Strategy, 'google') {
-    constructor(authService) {
+    constructor() {
         super(Object.assign({}, config));
-        this.authService = authService;
     }
-    async validate(request, accessToken, refreshToken, profile, done) {
+    async validate(accessToken, refreshToken, profile, done) {
         try {
+            const { name, emails, photos } = profile;
             const newUser = {
-                id: profile._json.sub,
-                email: profile._json.email,
-                pw: 'test',
+                email: emails[0].value,
+                firstName: name.givenName,
+                lastNaem: name.familyName,
+                picture: photos[0].value,
+                accessToken,
             };
-            this.authService.addUser(newUser)
+            return this.authService.createUser(newUser)
                 .then(() => {
                 done(null, profile.name);
             })
                 .catch((err) => {
                 console.log('[Error in Google Validation] ... ');
                 console.log(err);
-                done(false);
+                done(null, false);
             });
         }
         catch (err) {
@@ -50,7 +51,7 @@ let GoogleStrategy = class GoogleStrategy extends passport_1.PassportStrategy(pa
 };
 GoogleStrategy = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [auth_service_1.AuthService])
+    __metadata("design:paramtypes", [])
 ], GoogleStrategy);
 exports.GoogleStrategy = GoogleStrategy;
 //# sourceMappingURL=google.strategy.js.map

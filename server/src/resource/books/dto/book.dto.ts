@@ -10,7 +10,7 @@ export class BookDto {
   title: string;
 
   @IsString()
-  isbn: string;
+  isbn: number;
 
   @IsString()
   contents: string;

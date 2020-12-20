@@ -1,7 +1,6 @@
 const __importDefault = (this && this.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { default: mod };
 };
-
 Object.defineProperty(exports, '__esModule', { value: true });
 const helmet_1 = __importDefault(require('helmet'));
 const morgan_1 = __importDefault(require('morgan'));
@@ -18,13 +17,13 @@ async function bootstrap() {
   app.use(morgan_1.default('common'));
   app.use(cookie_parser_1.default('@#@$MYSIGN#@$#$'));
   const whiteList = [
-    'http://localhost:3001',
+    'http://localhost:3000',
   ];
   app.enableCors({
     origin: whiteList,
     credentials: true,
   });
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();
 // # sourceMappingURL=main.js.map

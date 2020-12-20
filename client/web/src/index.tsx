@@ -10,11 +10,17 @@ import axios from './util/axios';
 const history: any = createBrowserHistory();
 configure({ axios });
 
+function Index(): JSX.Element {
+  return (
+    <div>
+      <Router history={history}>
+        <Route path="/" component={App} />
+      </Router>
+      ,
+    </div>
+  );
+}
 ReactDOM.render(
-
-  <Router history={history}>
-    <Route path="/" component={App} />
-  </Router>,
-
+  <Index />,
   document.getElementById('root'),
 );

@@ -16,13 +16,13 @@ export class BookPatchDto {
   price: number;
 
   @IsString()
-  authors: string[];
+  authors: string;
 
   @IsString()
   translators: string;
 
   @IsString()
-  isbn: string;
+  isbn: number;
 
   @IsString()
   userId: string;
