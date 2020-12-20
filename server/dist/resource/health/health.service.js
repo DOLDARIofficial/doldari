@@ -12,53 +12,53 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BookService = void 0;
+exports.HealthService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const Book_entities_1 = require("./entities/Book.entities");
-let BookService = class BookService {
-    constructor(BookRepository) {
-        this.BookRepository = BookRepository;
+const health_entitiy_1 = require("./entities/health.entitiy");
+let HealthService = class HealthService {
+    constructor(HealthRepository) {
+        this.HealthRepository = HealthRepository;
     }
     async findAll(limit) {
-        return this.BookRepository
+        return this.HealthRepository
             .createQueryBuilder()
-            .orderBy('createdAt', 'DESC')
+            .addOrderBy('createdAt', 'DESC')
             .limit(limit)
             .getMany();
     }
     async findOutline(important = 2) {
-        const newBook = await this.BookRepository
+        const newHealth = await this.HealthRepository
             .createQueryBuilder()
             .orderBy('createdAt')
-            .limit(8)
+            .limit(20)
             .getMany();
-        return newBook.concat(newBook);
+        return newHealth.concat(newHealth);
     }
-    async findOne(id) {
-        return this.BookRepository.findOne(id);
+    async findOne(healthId) {
+        return this.HealthRepository.findOne(healthId);
     }
-    async createBook(bookData) {
-        return this.BookRepository.save(bookData);
+    async createRoom(healthData) {
+        return this.HealthRepository.save(healthData);
     }
-    async updateBook(bookData) {
-        const { id, title, contents, userId, price, description, isbn, } = bookData;
-        const result = await this.BookRepository
-            .update({ id }, {
-            title, contents, description, price, userId, isbn,
+    async updateRoom(healthData) {
+        const { healthId, createdAt, name, content, userId, price, } = healthData;
+        const result = await this.HealthRepository
+            .update({ healthId }, {
+            createdAt, name, content, userId, price,
         });
         return result.affected;
     }
-    async deleteBook(id) {
-        const result = await this.BookRepository.delete(id);
+    async deleteRoom(healthId) {
+        const result = await this.HealthRepository.delete(healthId);
         return result.affected;
     }
 };
-BookService = __decorate([
+HealthService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(Book_entities_1.BookList)),
+    __param(0, typeorm_1.InjectRepository(health_entitiy_1.HealthEntity)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], BookService);
-exports.BookService = BookService;
-//# sourceMappingURL=books.service.js.map
+], HealthService);
+exports.HealthService = HealthService;
+//# sourceMappingURL=health.service.js.map

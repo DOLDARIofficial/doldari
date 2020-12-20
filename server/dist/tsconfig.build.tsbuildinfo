@@ -3492,8 +3492,8 @@
         "affectsGlobalScope": false
       },
       "../src/resource/books/books.service.ts": {
-        "version": "b7fc39c5d8d9dd2f1a3578892ae89b8d078fc2717f9bf91e5b262ef5197177c8",
-        "signature": "4af4c835d6631c76fc9b80d3b8e3671f3165be7ac4b526a159cfe49c8f1353f8",
+        "version": "e3f3da8c4cabd63cf83ae791d6e38a21d907c88ea97327385be0b685c7921f3f",
+        "signature": "a9d8b043496b6d3191ad3d24c3d7e04c98c72d46fddfff4216597b5af4802d29",
         "affectsGlobalScope": false
       },
       "../src/resource/books/books.controller.ts": {
@@ -3902,7 +3902,7 @@
         "affectsGlobalScope": false
       },
       "../src/resource/room/room.service.ts": {
-        "version": "ed1517f298ce43f4c41c7a7c60facc3b2fea2cf70f1238897fd6a579cf3371a1",
+        "version": "dd95244b9b2696a3b80098c7b08c26770658dfc3dbc0818ae5ecde7364abb4a0",
         "signature": "bf11bcb33edac4e09d557a386c815a3ff59fe22c0d8e84be571815a95a7f108e",
         "affectsGlobalScope": false
       },
@@ -5464,6 +5464,46 @@
       "../src/resource/books/dto/bookget.dto.ts": {
         "version": "172c64e628a8578d0b9186fde01c8447b08686dfc2556e5b62213f0c3b580b5e",
         "signature": "c46d88ea0f94c88573faf05b8561d38d9158cf6e26aa211625a81a387f2d3c8f",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/interfaces/health.interface.ts": {
+        "version": "2ef95daad290b1e7fd4869ce76e166fe06917754d5740a43a945270525620bf2",
+        "signature": "4f0527c9b979feae534614cc74e9300221e48fe7d1308009c37559e6b24483d3",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/entities/health.entitiy.ts": {
+        "version": "9f84c6722e6a7f6db16e8a512eb437b1fc8445159935f90cf081e78aaf602ad7",
+        "signature": "027e43f2b3f215fd20ba6bcb3a1b34e7c82769a21133d8f8874423898466a674",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/dto/health.dto.ts": {
+        "version": "51e4a340ef3726f7532651f6c3044b513f8b1d3e904131a015033ea51fc3137b",
+        "signature": "96d48e434c581549a942a802b75435de617be9be047796fcbbe89aae3329697b",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/dto/healthpatch.dto.ts": {
+        "version": "211ca45bf6b3ec4be92cc684b4011a189a6e71fe062e5bb5a7788324caa126e7",
+        "signature": "69e33724850ad9f3fc2b6e0a7b551a7f247665ae3aa80ab508a5aa2a96710446",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/health.service.ts": {
+        "version": "d8753a2e816b041863507497daa4e9d9d9a7a9a572a912a4cf200967ca57d142",
+        "signature": "dcfb6e3ad2f401d4333be61a88048edf19325b8966a7dd32f22645685df742fa",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/health.controller.ts": {
+        "version": "b702fd3961a7e3ce39d7a38bc32771c2fa16b299bf94965143b197878bbe0751",
+        "signature": "d4f45fb07d92724fe78438291a9cf0db3982a1ddd51e062697c92ae310233c30",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/health.module.ts": {
+        "version": "9f1cb275b833a5162eff4945affbc67fdd31ccbdf4de22484b0178275c08c6a4",
+        "signature": "7ebdc6e482327be44f898d355da4b2002c50c4a5b7f4e9bed061d83b5c257fce",
+        "affectsGlobalScope": false
+      },
+      "../src/resource/health/dto/healthget.dto.ts": {
+        "version": "aae9d9e237873412ac24955afb868f43735ec10a01132cee330168eae7e10997",
+        "signature": "a71a7dcda3aa7762e3c5a37922b37fc1498ad7ce8d550533a8905f650b6b42f4",
         "affectsGlobalScope": false
       },
       "../src/resource/room/dto/roomget.dto.ts": {
@@ -11186,6 +11226,42 @@
         "../node_modules/typeorm/index.d.ts",
         "../src/resource/books/interfaces/book.interface.ts"
       ],
+      "../src/resource/health/dto/health.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/resource/health/dto/healthget.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/resource/health/dto/healthpatch.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/resource/health/entities/health.entitiy.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/resource/health/interfaces/health.interface.ts"
+      ],
+      "../src/resource/health/health.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/resource/health/dto/health.dto.ts",
+        "../src/resource/health/dto/healthpatch.dto.ts",
+        "../src/resource/health/entities/health.entitiy.ts",
+        "../src/resource/health/health.service.ts",
+        "../src/resource/health/interfaces/health.interface.ts"
+      ],
+      "../src/resource/health/health.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/resource/health/entities/health.entitiy.ts",
+        "../src/resource/health/health.controller.ts",
+        "../src/resource/health/health.service.ts"
+      ],
+      "../src/resource/health/health.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/resource/health/dto/health.dto.ts",
+        "../src/resource/health/dto/healthpatch.dto.ts",
+        "../src/resource/health/entities/health.entitiy.ts"
+      ],
       "../src/resource/room/dto/room.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
@@ -16508,6 +16584,22 @@
       "../src/resource/books/entities/book.entities.ts": [
         "../src/resource/books/interfaces/book.interface.ts"
       ],
+      "../src/resource/health/entities/health.entitiy.ts": [
+        "../src/resource/health/interfaces/health.interface.ts"
+      ],
+      "../src/resource/health/health.controller.ts": [
+        "../src/resource/health/dto/health.dto.ts",
+        "../src/resource/health/dto/healthpatch.dto.ts",
+        "../src/resource/health/entities/health.entitiy.ts",
+        "../src/resource/health/health.service.ts",
+        "../src/resource/health/interfaces/health.interface.ts"
+      ],
+      "../src/resource/health/health.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/resource/health/dto/health.dto.ts",
+        "../src/resource/health/dto/healthpatch.dto.ts",
+        "../src/resource/health/entities/health.entitiy.ts"
+      ],
       "../src/resource/room/entities/room.entitiy.ts": [
         "../src/resource/room/interfaces/room.interface.ts"
       ],
@@ -17684,6 +17776,14 @@
       "../src/resource/books/dto/bookpatch.dto.ts",
       "../src/resource/books/entities/book.entities.ts",
       "../src/resource/books/interfaces/book.interface.ts",
+      "../src/resource/health/dto/health.dto.ts",
+      "../src/resource/health/dto/healthget.dto.ts",
+      "../src/resource/health/dto/healthpatch.dto.ts",
+      "../src/resource/health/entities/health.entitiy.ts",
+      "../src/resource/health/health.controller.ts",
+      "../src/resource/health/health.module.ts",
+      "../src/resource/health/health.service.ts",
+      "../src/resource/health/interfaces/health.interface.ts",
       "../src/resource/room/dto/room.dto.ts",
       "../src/resource/room/dto/roomget.dto.ts",
       "../src/resource/room/dto/roompatch.dto.ts",
