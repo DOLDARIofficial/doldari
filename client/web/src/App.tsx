@@ -18,6 +18,7 @@ import Roomdetail from './pages/rooms/Roomdetail';
 import AuthContext, { useLogin } from './util/contexts/AuthContext';
 import useAutoLogin from './util/hooks/useAutoLogin';
 import BookPage from './pages/shared/BookPage';
+import Hupload from './pages/health/Hupload';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,6 +94,7 @@ export default function App(): JSX.Element {
               <Route exact path="/heath_management/detail" component={HealthView} />
               <Route exact path="/books/detail" component={BookDetail} />
               <Route exact path="/book" component={BookPage} />
+              <Route exact path="/health_management/upload" component={Hupload} />
 
             </Switch>
 

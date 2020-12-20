@@ -21,8 +21,12 @@
 		"react-moment": "1.0.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.0",
+<<<<<<< HEAD
+		"react-slick": "^0.27.13",
+=======
 		"react-wordcloud": "1.2.7",
 		"semantic-ui-react": "2.0.1",
+>>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 		"typescript": "4.0.5",
 		"web-vitals": "^0.2.4"
 	},

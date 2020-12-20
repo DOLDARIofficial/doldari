@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 
 // import { googleConfig } from '../config/google-config';
 // import { JwtService } from '@nestjs/jwt';
-import { VerifyCallback } from 'passport-jwt';
+// import { VerifyCallback } from 'passport-jwt';
 // import { AuthService } from '../auth.service';
 
 const config = {

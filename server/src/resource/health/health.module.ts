@@ -11,4 +11,4 @@ import { HealthService } from './health.service';
   providers: [HealthService],
   exports: [HealthService],
 })
-export class RoomModule {}
+export class Healthmodule {}

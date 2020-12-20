@@ -3,6 +3,7 @@ import { Grid, Button, makeStyles } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(3),
     maxWidth: 1200,
+
   },
   place: {
     flexBasis: '33.33%',
@@ -29,6 +31,28 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
+  y_img: {
+    position: 'absolute',
+    bottom: 25,
+    right: 10,
+    width: 50,
+  },
+  pricetag: {
+    color: '#F5A1A1',
+    fontSize: '28px',
+    textAlign: 'right',
+    fontWeight: 'bold',
+    float: 'right',
+
+  },
+  title: {
+    display: 'block',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    width: 320,
+
+  },
 
 }));
 
@@ -41,9 +65,10 @@ export default function Hgrid(): JSX.Element {
           <Grid item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Button size="medium">
-                  <Typography gutterBottom variant="h6">
-                    (제목입니다) 피트니스 센터 양도합니다!
+                <Button size="medium" component={Link} to="/heath_management/detail">
+                  <Typography className={classes.title} gutterBottom variant="h6">
+                    (제목입니다) 피트니스 센터 양도합니다! 길면 사라집니다.
+                    {/* {data.title} */}
                   </Typography>
                 </Button>
 
@@ -76,15 +101,15 @@ export default function Hgrid(): JSX.Element {
             </Grid>
           </Grid>
           <Grid item>
-            <ButtonBase className={classes.image}>
+            <ButtonBase className={classes.image} component={Link} to="/heath_management/detail">
               <img className={classes.img} alt="complex" src="2.png" />
+              <img className={classes.y_img} alt="양도금포함" src="yang.png" />
             </ButtonBase>
-            <Grid>
-              <img alt="complex" src="812.png" />
-            </Grid>
+
             <Grid item>
-              <Typography variant="subtitle1">50000원</Typography>
+              <Typography className={classes.pricetag}>50000원</Typography>
             </Grid>
+
           </Grid>
         </Grid>
       </Paper>
