@@ -13,6 +13,7 @@ import Htop from './Htop';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+
   },
   paper: {
     paddingTop: 60,
@@ -22,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1200,
     marginTop: 150,
     borderRadius: 40,
+  },
+  content: {
+    paddingTop: 20,
+    paddingBottom: 10,
+    fontSize: 18,
   },
   image: {
     width: 200,
@@ -40,11 +46,23 @@ const useStyles = makeStyles((theme) => ({
 
   },
   text: {
-    textAlign: 'right',
     fontWeight: 'bold',
     color: '#F5A1A1',
     verticalAlign: 'middle',
-    fontSize: 25,
+    fontSize: 38,
+    paddingTop: 18,
+  },
+  textw: {
+    fontWeight: 'bold',
+    color: '#a0a0a0',
+    verticalAlign: 'middle',
+    fontSize: 28,
+    paddingTop: 25,
+  },
+  textmap: {
+    color: '#d0dcf5',
+    fontWeight: 'bold',
+    fontSize: 24,
     marginTop: 30,
   },
 }));
@@ -116,16 +134,19 @@ export default function HealthView(): JSX.Element {
           </Grid>
         </Grid>
 
-        <Grid container spacing={2} style={{ }}>
+        <Grid container spacing={2} justify="flex-end">
           <Grid item>
-            <Typography className={classes.text}>2000원</Typography>
+            <Typography className={classes.text}>2000</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.textw}>원</Typography>
           </Grid>
           <Grid item>
             <img src="/sale.png" alt="이미지" className={classes.img_s} />
           </Grid>
         </Grid>
 
-        <Grid style={{ paddingTop: 20, paddingBottom: 10 }}>
+        <Grid className={classes.content}>
           콘텐츠 내용 들어갑니다
         </Grid>
         <div style={{ padding: 40 }}>
@@ -135,12 +156,12 @@ export default function HealthView(): JSX.Element {
           <img className={classes.image} src="/s-img.png" alt="이미지" />
         </div>
 
-        <Typography>지도보기</Typography>
-        <Typography>
+        <Typography className={classes.textmap}>지도보기</Typography>
+        <Typography style={{ fontWeight: 'bold' }}>
           <img src="/loca.png" alt="이미지" />
           부산대학교
         </Typography>
-        <Typography>부산광역시 금정구 부산대학로 63번길 2</Typography>
+        <Typography color="textSecondary">부산광역시 금정구 부산대학로 63번길 2</Typography>
         <img src="/map.png" alt="이미지" />
       </Paper>
 
