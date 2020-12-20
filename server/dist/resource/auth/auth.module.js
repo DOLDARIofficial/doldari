@@ -17,8 +17,10 @@ let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([testUser_entity_1.TestUser])],
-        providers: [auth_service_1.AuthService, google_strategy_1.GoogleStrategy,],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([testUser_entity_1.User]),
+        ],
+        providers: [auth_service_1.AuthService, google_strategy_1.GoogleStrategy],
         controllers: [auth_controller_1.AuthController],
     })
 ], AuthModule);

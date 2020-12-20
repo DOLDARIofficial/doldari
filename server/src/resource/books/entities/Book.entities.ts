@@ -19,22 +19,22 @@ import { Book } from '../interfaces/book.interface';
 * userId : 게시글 작성자의 id
 * description : 게시글 작성자가 쓴 게시글에대한 설명
 */
-  @Entity({ name: 'Book' })
+  @Entity({ name: 'Books' })
 export class BookList implements Book {
    @PrimaryGeneratedColumn()
    id: number;
 
    @Column()
-   title: string;
+   contents: string;
 
    @Column()
-   contents: string;
+   title: string;
 
    @Column()
    url: string;
 
    @Column()
-   isbn: string;
+   isbn: number;
 
    @Column()
    datetime: string;
@@ -50,6 +50,9 @@ export class BookList implements Book {
 
    @Column()
    price: number;
+
+   @Column()
+   sale_price: number;
 
    @Column()
    thumbnail: string;

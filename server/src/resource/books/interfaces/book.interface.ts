@@ -16,7 +16,6 @@
 */
 
 export interface Book{
-  id: number;
   title: string;
   authors: string;
   translators: string;
@@ -24,7 +23,7 @@ export interface Book{
   description: string;
   userId: string;
   createdAt: string;
-  isbn: string;
+  isbn: number;
   url: string;
   state: string;
   thumbnail: string;

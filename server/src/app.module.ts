@@ -4,23 +4,16 @@ import { AccessControlModule } from 'nest-access-control';
 // typeOrm
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-<<<<<<< HEAD
-import { AppService } from './app.service';
-import { AppController } from './app.controller';
-=======
 import { roles } from './roles/App.roles';
->>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 // import loadConfig from './config/loadConfig';
 // import { TypeOrmConfigService } from './config/database.config';
 
 // modules
 // import { TestModule } from './resource/test/test.module';
-<<<<<<< HEAD
-=======
 import { BookModule } from './resource/books/books.module';
->>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
+import { Healthmodule } from './resource/health/health.module';
 // import { RoomEntity } from './resource/room/entities/room.entitiy';
 // import { TestUser } from './resource/auth/entities/testUser.entity';
 @Module({
@@ -44,12 +37,8 @@ import { RoomModule } from './resource/room/room.module';
     AuthModule,
     RoomModule,
     BookModule,
+    Healthmodule,
   ],
-<<<<<<< HEAD
-  controllers: [AppController],
-  providers: [AppService],
-=======
->>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 })
 
 export class AppModule {
