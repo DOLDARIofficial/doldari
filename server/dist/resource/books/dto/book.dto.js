@@ -23,7 +23,7 @@ __decorate([
 ], BookDto.prototype, "title", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], BookDto.prototype, "isbn", void 0);
 __decorate([
     class_validator_1.IsString(),

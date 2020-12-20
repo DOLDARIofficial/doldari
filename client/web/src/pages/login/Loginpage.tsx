@@ -1,31 +1,16 @@
 import React from 'react';
 
 import GoogleLogin from 'react-google-login';
+import { useHistory } from 'react-router-dom';
 import { Paper, Grid, Typography } from '@material-ui/core';
+import useAxios from 'axios-hooks';
+import useAuthContext from '../../util/hooks/useAuthContext';
 // import axios from 'axios-hooks';
 
-const googleLogin = async (response: any) => {
-  // login 로직 구현
-  // const option = {
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   method: 'post',
-  //   data: {
-  //     accessToken: response.accessToken,
-  //   },
-  //   url: 'localhost:3001' + '/auth/google',
-  // };
+interface loginProps {
+  handleLogin: () => void;
 
-  // try {
-  //   return await axios(option);
-  // } catch (e) {
-  //   throw e;
-  // }
-  console.log(response.profileObj);
-
-  window.location.href = 'http://localhost:3000/';
-};
+}
 
 const onFailure = (response: any) => {
   console.log(response);
@@ -43,6 +28,40 @@ const onFailure = (response: any) => {
 // );
 
 export default function Login(): JSX.Element {
+  const history = useHistory();
+  // const [isLogin, setLogin] = React.useState<any>();
+  const [, excutePost] = useAxios({ url: '/auth/create', method: 'post' }, { manual: true });
+  const authContext = useAuthContext();
+  const googleLogin = async (response: any) => {
+    // login 로직 구현
+    // const option = {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   method: 'post',
+    //   data: {
+    //     accessToken: response.accessToken,
+    //   },
+    //   url: 'localhost:3001' + '/auth/google',
+    // };
+
+    // try {
+    //   return await axios(option);
+    // } catch (e) {
+    //   throw e;
+    // }
+
+    excutePost({
+      data: response.profileObj,
+    }).then((res) => {
+      if (res) {
+        authContext.handleLogin(response.accessToken);
+        console.log(response);
+      }
+      history.push('/');
+    }).catch((err) => console.log(err.message));
+  };
+
   return (
     <Grid style={{
       paddingTop: 100, display: 'flex', justifyContent: 'center',

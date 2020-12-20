@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestUser = void 0;
+exports.User = void 0;
 const typeorm_1 = require("typeorm");
-let TestUser = class TestUser {
+let User = class User {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
-], TestUser.prototype, "index", void 0);
+    __metadata("design:type", String)
+], User.prototype, "firstName", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], TestUser.prototype, "id", void 0);
+], User.prototype, "lastName", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], TestUser.prototype, "pw", void 0);
+], User.prototype, "imageUrl", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], TestUser.prototype, "email", void 0);
-TestUser = __decorate([
-    typeorm_1.Entity({ name: 'NewTest' })
-], TestUser);
-exports.TestUser = TestUser;
+], User.prototype, "email", void 0);
+User = __decorate([
+    typeorm_1.Entity({ name: 'user' })
+], User);
+exports.User = User;
 //# sourceMappingURL=testUser.entity.js.map

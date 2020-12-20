@@ -22,9 +22,11 @@ let BookService = class BookService {
         this.BookRepository = BookRepository;
     }
     async findAll(limit) {
+        const lim = 8;
+        limit = lim;
         return this.BookRepository
             .createQueryBuilder()
-            .addOrderBy('createdAt', 'DESC')
+            .orderBy('createdAt', 'DESC')
             .limit(limit)
             .getMany();
     }

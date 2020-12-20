@@ -13,7 +13,6 @@ async function bootstrap() {
   // dotenv.config();
 
   const app = await NestFactory.create(AppModule, {});
-
   // **********************************************
   // Set global middlewares
   // bodyparser 설정.

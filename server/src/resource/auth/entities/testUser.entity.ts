@@ -1,15 +1,15 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'NewTest' })
-export class TestUser {
+@Entity({ name: 'user' })
+export class User {
  @PrimaryGeneratedColumn()
- index: number;
+ firstName: string;
 
  @Column()
- id: string;
+ lastName: string;
 
  @Column()
- pw: string;
+ imageUrl: string;
 
  @Column()
  email: string;

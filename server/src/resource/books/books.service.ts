@@ -17,10 +17,12 @@ export class BookService {
    * 책방 리스트 조회 메소드
    * @param limit optional, 가져오는 수 제한
    */
-  public async findAll(limit?: number): Promise<BookList[]> {
+  public async findAll(limit: number): Promise<BookList[]> {
+    const lim = 8;
+    limit = lim;
     return this.BookRepository
       .createQueryBuilder()
-      .addOrderBy('createdAt', 'DESC')
+      .orderBy('createdAt', 'DESC')
       .limit(limit)
       .getMany();
   }

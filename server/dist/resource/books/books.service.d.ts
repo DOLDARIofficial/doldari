@@ -5,7 +5,7 @@ import { BookPatchDto } from './dto/bookPatch.dto';
 export declare class BookService {
     private readonly BookRepository;
     constructor(BookRepository: Repository<BookList>);
-    findAll(limit?: number): Promise<BookList[]>;
+    findAll(limit: number): Promise<BookList[]>;
     findOutline(important?: number): Promise<BookList[]>;
     findOne(id: number): Promise<BookList>;
     createBook(bookData: BookDto): Promise<BookList>;
