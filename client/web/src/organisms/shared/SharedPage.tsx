@@ -127,6 +127,11 @@ export default function SharedPage(): JSX.Element {
       console.log(data);
     });
   }
+  /*
+  function handleSearch() {
+    const data: any = {
+      ...dataSource,
+    };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const param: string = event.target.value;
@@ -167,6 +172,8 @@ export default function SharedPage(): JSX.Element {
 
         <Grid item xs={11} style={{ paddingBottom: 30, justifyContent: 'left' }}>
           <div className={classes.search}>
+            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossOrigin="anonymous" />
+            ;
             <InputBase
               placeholder="ISBN 또는 책이름 검색..."
               classes={{
@@ -175,8 +182,11 @@ export default function SharedPage(): JSX.Element {
               }}
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleSearch}
+
             />
+
             <img src="/i_search@3x.png" alt="search" style={{ width: 30, height: 30 }} />
+
           </div>
         </Grid>
 

@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import Appbar from '../../shared/Appbar';
 
+
 const theme = createMuiTheme();
 
 theme.typography.h3 = {
@@ -46,7 +47,7 @@ export default function BookDetail(): JSX.Element {
         <Grid container spacing={2} style={{ marginLeft: 50, marginTop: 1 }}>
           <Grid item>
             <Paper elevation={0}>
-              <img src="https://ifh.cc/g/2JYFaB.jpg" width="200px" height="250px" alt="?" />
+              <img src="bookimg.png" width="200px" height="250px" alt="?" />
             </Paper>
           </Grid>
           <Grid item xs={12} sm container>
@@ -138,16 +139,16 @@ export default function BookDetail(): JSX.Element {
                     width: 250, height: 250, marginLeft: 50,
                   }}
                 >
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
                 <Grid item>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="bookimg.png" alt="?" />
                 </Grid>
               </Grid>
             </Paper>
@@ -157,3 +158,4 @@ export default function BookDetail(): JSX.Element {
     </div>
   );
 }
+

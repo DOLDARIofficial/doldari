@@ -55,6 +55,7 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.content}>
+
         <CssBaseline />
 
         <BrowserRouter>
