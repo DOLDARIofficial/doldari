@@ -70,6 +70,7 @@ export default function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.content}>
+
         <CssBaseline />
 
         {/* 로그인 여부 Context */}

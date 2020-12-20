@@ -1,10 +1,17 @@
 import {
+<<<<<<< HEAD
   Controller, Get, UseGuards, Req, Body, Post,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { userDto } from './dto/user.dto';
 import { User } from './entities/testUser.entity';
+=======
+  Controller, Get, UseGuards, Req,
+} from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { AuthService } from './auth.service';
+>>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 
 @Controller('auth')
 export class AuthController {
@@ -20,6 +27,7 @@ export class AuthController {
   @Get('google/callback')
   @UseGuards(AuthGuard('google'))
   async googleAuthCallback(@Req() req) {
+<<<<<<< HEAD
     console.log(req);
     return 'ok';
   }
@@ -33,5 +41,8 @@ export class AuthController {
   @UseGuards(AuthGuard('google'))
   async createUser(@Body() user: userDto): Promise<User> {
     return this.authService.createUser(user);
+=======
+    return 'ok';
+>>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
   }
 }

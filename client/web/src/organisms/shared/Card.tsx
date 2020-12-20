@@ -31,7 +31,7 @@ export interface Book{
 
 export default function CardForm(data: Book): JSX.Element {
   const {
-    title, authors, isbn, state,
+    title, authors,
     publisher, sale_price, thumbnail,
   } = data;
 
