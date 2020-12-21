@@ -50,7 +50,7 @@ export class RoomService {
 
   /**
    * 개별 게시물 조회 메소드
-   * @param roomId 공지사항 개별글 번호
+   * @param roomId 
    */
   public async findOne(roomId: number): Promise<RoomEntity> {
     return this.RoomRepository.findOne(roomId);

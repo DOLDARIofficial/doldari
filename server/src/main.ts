@@ -13,7 +13,6 @@ async function bootstrap() {
   // dotenv.config();
 
   const app = await NestFactory.create(AppModule, {});
-
   // **********************************************
   // Set global middlewares
   // bodyparser 설정.
@@ -30,13 +29,13 @@ async function bootstrap() {
   app.use(cookieParser('@#@$MYSIGN#@$#$')); // cookie parser 설정
 
   const whiteList = [
-    'http://localhost:3001',
+    'http://localhost:3000',
   ];
   app.enableCors({
     origin: whiteList,
     credentials: true,
   });
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();

@@ -1,5 +1,7 @@
 {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   "workbench.iconTheme": "material-icon-theme",
   // typescript semantic highlighting
   "editor.semanticHighlighting.enabled": true,
@@ -106,6 +108,7 @@
   "json.schemas": []
 }
 =======
+>>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
     "workbench.iconTheme": "material-icon-theme",
     // typescript semantic highlighting
     "editor.semanticHighlighting.enabled": true,
@@ -211,4 +214,7 @@
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "json.schemas": []
   }
+<<<<<<< HEAD
+=======
 >>>>>>> ddedc4d3420d84856e7af8aa3965f34b690fe3e8
+>>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc

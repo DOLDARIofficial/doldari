@@ -11,6 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
@@ -21,13 +32,30 @@ let AuthService = class AuthService {
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
-    async addUser(user) {
-        return true;
+    async validateUser(username) {
+        const user = await this.userRepository.findOne(username);
+        if (user) {
+            const result = __rest(user, []);
+            return result;
+        }
+        return null;
+    }
+    async findOne(id) {
+        return this.userRepository.findOne(id);
+    }
+    async createUser(user) {
+        const newUser = await this.userRepository.create();
+        newUser.firstName = user.firstName;
+        newUser.lastName = user.lastName;
+        newUser.email = user.email;
+        newUser.imageUrl = user.imageUrl;
+        console.log('[Auth Service : add User] ... ', newUser);
+        return this.userRepository.save(newUser);
     }
 };
 AuthService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(testUser_entity_1.TestUser)),
+    __param(0, typeorm_1.InjectRepository(testUser_entity_1.User)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], AuthService);
 exports.AuthService = AuthService;

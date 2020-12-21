@@ -37,7 +37,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   paper: {
     width: '1320px',
-    height: '1177px',
+    height: '900px',
     padding: '40px',
     borderRadius: '40px',
   },
@@ -57,7 +57,7 @@ export default function BookDetail(): JSX.Element {
         <Grid container spacing={2} style={{ marginLeft: 50, marginTop: 1 }}>
           <Grid item>
             <Paper elevation={0}>
-              <img src="https://ifh.cc/g/2JYFaB.jpg" width="200px" height="250px" alt="?" />
+              <img src="/bookimg.jpg" width="200px" height="250px" alt="?" />
             </Paper>
           </Grid>
           <Grid item xs={12} sm container>
@@ -93,7 +93,7 @@ export default function BookDetail(): JSX.Element {
                 </Grid>
                 <Grid item>
                   <Button>
-                    <img src="sale.png" height="30" alt="?" />
+                    <img src="/sale.png" height="30" alt="?" />
                   </Button>
                 </Grid>
               </Grid>
@@ -149,16 +149,16 @@ export default function BookDetail(): JSX.Element {
                     width: 250, height: 250, marginLeft: 50,
                   }}
                 >
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="/bookimg.jpg" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="/bookimg.jpg" alt="?" />
                 </Grid>
                 <Grid item style={{ width: 250, height: 250, marginLeft: 3 }}>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="/bookimg.jpg" alt="?" />
                 </Grid>
                 <Grid item>
-                  <img src="https://ifh.cc/g/2JYFaB.jpg" alt="?" />
+                  <img src="/bookimg.jpg" alt="?" />
                 </Grid>
               </Grid>
             </Paper>

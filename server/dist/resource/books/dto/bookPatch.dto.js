@@ -31,15 +31,15 @@ __decorate([
 ], BookPatchDto.prototype, "price", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookPatchDto.prototype, "authors", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], BookPatchDto.prototype, "translators", void 0);
 __decorate([
     class_validator_1.IsString(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], BookPatchDto.prototype, "isbn", void 0);
 __decorate([
     class_validator_1.IsString(),

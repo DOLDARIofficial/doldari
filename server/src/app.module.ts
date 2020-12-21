@@ -13,6 +13,7 @@ import { roles } from './roles/App.roles';
 import { BookModule } from './resource/books/books.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
+import { Healthmodule } from './resource/health/health.module';
 // import { RoomEntity } from './resource/room/entities/room.entitiy';
 // import { TestUser } from './resource/auth/entities/testUser.entity';
 @Module({
@@ -23,7 +24,7 @@ import { RoomModule } from './resource/room/room.module';
     // }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'database-1.cgdowelkhyep.us-east-2.rds.amazonaws.com',
+      host: 'database-1.cebn0tm9t8p4.us-east-2.rds.amazonaws.com',
       port: 3306,
       username: 'admin',
       password: '00000000',
@@ -36,6 +37,7 @@ import { RoomModule } from './resource/room/room.module';
     AuthModule,
     RoomModule,
     BookModule,
+    Healthmodule,
   ],
 })
 

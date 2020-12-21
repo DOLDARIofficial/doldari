@@ -17,13 +17,13 @@ async function bootstrap() {
   app.use(morgan_1.default('common'));
   app.use(cookie_parser_1.default('@#@$MYSIGN#@$#$'));
   const whiteList = [
-    'http://localhost:3001',
+    'http://localhost:3000',
   ];
   app.enableCors({
     origin: whiteList,
     credentials: true,
   });
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();
 // # sourceMappingURL=main.js.map

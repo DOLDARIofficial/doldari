@@ -37,8 +37,6 @@ module.exports = {
      */
     'brace-style': 'off',
     camelcase: 1,
-    'no-param-reassign': 0,
-    // 'no-console': [2, { allow: ['error'] }],
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'lines-between-class-members': 1,
@@ -94,7 +92,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 2,
 
     // do not allow unused variables
-    '@typescript-eslint/no-unused-vars': 2,
+    // '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/camelcase': 'off',
     /**
      * React rules

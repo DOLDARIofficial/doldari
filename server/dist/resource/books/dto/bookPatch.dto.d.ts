@@ -3,9 +3,9 @@ export declare class BookPatchDto {
     title: string;
     contents: string;
     price: number;
-    authors: string[];
-    translators: string[];
-    isbn: string;
+    authors: string;
+    translators: string;
+    isbn: number;
     userId: string;
     publisher: string;
     description: string;
