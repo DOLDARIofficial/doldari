@@ -1,10 +1,7 @@
-const __importDefault = (this && this.__importDefault) || function (mod) {
-  return (mod && mod.__esModule) ? mod : { default: mod };
-};
 Object.defineProperty(exports, '__esModule', { value: true });
-const helmet_1 = __importDefault(require('helmet'));
-const morgan_1 = __importDefault(require('morgan'));
-const cookie_parser_1 = __importDefault(require('cookie-parser'));
+const helmet_1 = require('helmet');
+const morgan_1 = require('morgan');
+const cookie_parser_1 = require('cookie-parser');
 const express_1 = require('express');
 const core_1 = require('@nestjs/core');
 const app_module_1 = require('./app.module');

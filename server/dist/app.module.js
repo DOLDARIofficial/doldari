@@ -19,6 +19,7 @@ const App_roles_1 = require("./roles/App.roles");
 const books_module_1 = require("./resource/books/books.module");
 const auth_module_1 = require("./resource/auth/auth.module");
 const room_module_1 = require("./resource/room/room.module");
+const health_module_1 = require("./resource/health/health.module");
 let AppModule = class AppModule {
     constructor(connection) {
         this.connection = connection;
@@ -43,6 +44,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             room_module_1.RoomModule,
             books_module_1.BookModule,
+            health_module_1.Healthmodule,
         ],
     }),
     __metadata("design:paramtypes", [typeorm_2.Connection])

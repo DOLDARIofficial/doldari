@@ -1,2 +1,2 @@
-export declare class RoomModule {
+export declare class Healthmodule {
 }
