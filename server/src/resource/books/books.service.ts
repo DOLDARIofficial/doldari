@@ -20,7 +20,7 @@ export class BookService {
   public async findAll(limit?: number): Promise<BookList[]> {
     return this.BookRepository
       .createQueryBuilder()
-      .addOrderBy('createdAt', 'DESC')
+      .orderBy('createdAt', 'DESC')
       .limit(limit)
       .getMany();
   }
@@ -50,7 +50,7 @@ export class BookService {
 
   /**
    * 개별 게시물 조회 메소드
-   * @param id 공지사항 개별글 번호
+   * @param id 
    */
   public async findOne(id: number): Promise<BookList> {
     return this.BookRepository.findOne(id);
@@ -58,7 +58,7 @@ export class BookService {
 
   /**
    * 책방 생성 메소드
-   * @param bookData 생성할 공지사항 데이터 NoticePatchRequest
+   * @param bookData 
    */
   public async createBook(bookData: BookDto): Promise<BookList> {
     return this.BookRepository.save(bookData);
@@ -66,7 +66,7 @@ export class BookService {
 
   /**
    * 개별 게시글 변경 메소드
-   * @param bookData 변경할 게시글 데이터 해당 공지사항의 고유 id를 포함해야합니다.
+   * @param bookData 변경할 게시글 데이터 해당 고유 id를 포함해야합니다.
    */
   public async updateBook(bookData: BookPatchDto): Promise<number> {
     const {
@@ -81,7 +81,7 @@ export class BookService {
 
   /**
    * 개별 공지사항 글 삭제 메소드
-   * @param id 삭제할 공지사항의 고유 번호
+   * @param id 삭제할 고유 번호
    */
   public async deleteBook(id: number | string): Promise<number> {
     const result = await this.BookRepository.delete(id);

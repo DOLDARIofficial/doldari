@@ -7,10 +7,10 @@ export class RoomDto {
   roomId: number;
 
   @IsString()
-  name: string;
+  title: string;
 
   @IsString()
-  createdAt: number;
+  createdAt: string;
 
   @IsString()
   price: number;

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { RoomDto } from './dto/Room.dto';
+import { RoomDto } from './dto/room.dto';
 import { RoomPatchDto } from './dto/RoomPatch.dto';
 import { RoomEntity } from './entities/room.entitiy';
 
@@ -50,7 +50,7 @@ export class RoomService {
 
   /**
    * 개별 게시물 조회 메소드
-   * @param roomId 공지사항 개별글 번호
+   * @param roomId 
    */
   public async findOne(roomId: number): Promise<RoomEntity> {
     return this.RoomRepository.findOne(roomId);
@@ -70,11 +70,11 @@ export class RoomService {
    */
   public async updateRoom(roomData: RoomPatchDto): Promise<number> {
     const {
-      roomId, createdAt, name, content, userId, price,
+      roomId, createdAt, title, content, userId, price,
     } = roomData;
     const result = await this.RoomRepository
       .update({ roomId }, {
-        createdAt, name, content, userId, price,
+        createdAt, title, content, userId, price,
       });
     return result.affected;
   }

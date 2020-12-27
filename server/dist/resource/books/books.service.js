@@ -24,7 +24,7 @@ let BookService = class BookService {
     async findAll(limit) {
         return this.BookRepository
             .createQueryBuilder()
-            .addOrderBy('createdAt', 'DESC')
+            .orderBy('createdAt', 'DESC')
             .limit(limit)
             .getMany();
     }

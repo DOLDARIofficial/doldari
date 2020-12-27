@@ -1,10 +1,12 @@
-import React from 'react';
-import { makeStyles, Grid, Typography } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-// import { Pagination } from './Pagination';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import {
+  makeStyles, Grid, Paper, GridList,
+} from '@material-ui/core';
+//   Typography,
+import useAxios from 'axios-hooks';
 import Appbar from '../../organisms/shared/Appbar';
 import Tabbar from '../../organisms/shared/Tabbar';
+import CardForm from './Card';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: '100%',
     marginTop: '80px',
+    paddingRight: theme.spacing(30),
+    paddingLeft: theme.spacing(30),
+  },
+  box: {
+    width: '1200',
+    marginTop: 30,
     paddingRight: theme.spacing(30),
     paddingLeft: theme.spacing(30),
   },
@@ -28,96 +36,56 @@ const useStyles = makeStyles((theme) => ({
   control: {
     padding: theme.spacing(2),
   },
+  card: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '10px',
+  },
+  paperAlgin: {
+    margin: '50px',
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
 
-export default function HealthView(): JSX.Element {
-  // const [spacing] = React.useState<GridSpacing>(2);
+export default function Roompage(): JSX.Element {
   const classes = useStyles();
-
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
-  // };
-
+  const [, excuteGet] = useAxios({ url: '/room', method: 'get' }, { manual: true });
+  const [data, setData] = useState<any>();
+  useEffect(() => {
+    excuteGet().then((res) => {
+      setData(res.data);
+    });
+  });
   return (
-    <div>
+    <>
       <Appbar />
       <Tabbar />
-      <div className={classes.paper}>
-        <Paper elevation={0}>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography color="textSecondary">판매 등록일</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography color="textSecondary">2020.11.22</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Typography variant="h5">(제목입니다) 자취방 양도합니다. *북문근처에요!!</Typography>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>위치</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>네버랜드 112동</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>계약기간</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>21년 2월까지</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography>보증금 유/무</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography>없음</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-              <Grid container justify="flex-start" spacing={2}>
-                <Grid item>
-                  <Typography variant="h5">400,000원</Typography>
-                </Grid>
-                <Grid item>
-                  <img src="/sale.png" alt="이미지" />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid>
-            설명, 밑에 사진도 넣을께요
-          </Grid>
-          <img src="/2.png" alt="이미지" />
-          <Typography>지도보기</Typography>
-          <Typography>
-            <img src="/loca.png" alt="이미지" />
-            부산대학교
-          </Typography>
-          <Typography>부산광역시 금정구 부산대학로 63번길 2</Typography>
-          <img src="/map.png" alt="이미지" />
+      <div className={classes.img}>
+        <Grid>
+          <img alt="complex" src="transfer.png" />
+        </Grid>
+      </div>
+      <div className={classes.box}>
+        <Paper style={{ width: '1300px', height: '1400px', borderRadius: '40px' }} elevation={0} className={classes.paperAlgin}>
+          <GridList cellHeight={160} className={classes.card} cols={2}>
+            {data?.map((v: any) => (
+              <CardForm
+                roomId={v.roomId}
+                createdAt={v.createdAt}
+                title={v.title}
+                warrentyPrice={v.warrentyPrice}
+                userId={v.userId}
+                content={v.content}
+                locationCode={v.locationCode}
+              />
+            ))}
+          </GridList>
         </Paper>
       </div>
-    </div>
+      <div className="container" />
+    </>
   );
 }

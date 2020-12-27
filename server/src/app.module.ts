@@ -13,6 +13,7 @@ import { roles } from './roles/App.roles';
 import { BookModule } from './resource/books/books.module';
 import { AuthModule } from './resource/auth/auth.module';
 import { RoomModule } from './resource/room/room.module';
+import { Healthmodule } from './resource/health/health.module';
 // import { RoomEntity } from './resource/room/entities/room.entitiy';
 // import { TestUser } from './resource/auth/entities/testUser.entity';
 @Module({
@@ -36,6 +37,7 @@ import { RoomModule } from './resource/room/room.module';
     AuthModule,
     RoomModule,
     BookModule,
+    Healthmodule,
   ],
 })
 

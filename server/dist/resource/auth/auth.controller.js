@@ -16,6 +16,10 @@ exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
 const auth_service_1 = require("./auth.service");
+<<<<<<< HEAD
+=======
+const user_dto_1 = require("./dto/user.dto");
+>>>>>>> 00929569b543b0fe92d5ddadf9d76423b28e3d08
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -24,7 +28,11 @@ let AuthController = class AuthController {
         return (console.log(req));
     }
     async googleAuthCallback(req) {
+        console.log(req);
         return 'ok';
+    }
+    async createUser(user) {
+        return this.authService.createUser(user);
     }
 };
 __decorate([
@@ -43,6 +51,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "googleAuthCallback", null);
+__decorate([
+    common_1.Post('create'),
+    common_1.UseGuards(passport_1.AuthGuard('google')),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [user_dto_1.userDto]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "createUser", null);
 AuthController = __decorate([
     common_1.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

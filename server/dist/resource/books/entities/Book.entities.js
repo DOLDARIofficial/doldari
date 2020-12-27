@@ -23,18 +23,18 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], BookList.prototype, "title", void 0);
+], BookList.prototype, "contents", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], BookList.prototype, "contents", void 0);
+], BookList.prototype, "title", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], BookList.prototype, "url", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], BookList.prototype, "isbn", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -58,6 +58,10 @@ __decorate([
 ], BookList.prototype, "price", void 0);
 __decorate([
     typeorm_1.Column(),
+    __metadata("design:type", Number)
+], BookList.prototype, "sale_price", void 0);
+__decorate([
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], BookList.prototype, "thumbnail", void 0);
 __decorate([
@@ -77,7 +81,7 @@ __decorate([
     __metadata("design:type", String)
 ], BookList.prototype, "state", void 0);
 BookList = __decorate([
-    typeorm_1.Entity({ name: 'Book' }),
+    typeorm_1.Entity({ name: 'Books' }),
     __metadata("design:paramtypes", [Object])
 ], BookList);
 exports.BookList = BookList;

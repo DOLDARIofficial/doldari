@@ -7,10 +7,10 @@ export class RoomPatchDto {
   roomId: number;
 
   @IsString()
-  name: string;
+  title: string;
 
   @IsString()
-  createdAt: number;
+  createdAt: string;
 
   @IsString()
   price: number;
@@ -20,4 +20,7 @@ export class RoomPatchDto {
 
   @IsString()
   content: string;
+
+  @IsString()
+  state: string;
 }

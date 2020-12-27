@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => createStyles({
   root: {
     position: 'fixed',
     bottom: 100,
-    right: 280,
+    right: 150,
   },
 }));
 

@@ -4,8 +4,13 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 interface item {
+    roomId: number;
+    createdAt: string;
     title: string;
+    userId: string;
     content: string;
+    locationCode: string;
+    warrentyPrice: number;
     price: number;
 }
 
