@@ -5,8 +5,12 @@ const useStyles = makeStyles((theme) => createStyles({
   root: {
     position: 'fixed',
     bottom: 100,
-    right: 150,
+    right: 40,
   },
+  img: {
+    width: 50,
+  },
+
 }));
 
 export default function Htop(): JSX.Element {
@@ -14,7 +18,7 @@ export default function Htop(): JSX.Element {
   return (
     <div className={classes.root}>
       <a href="http://localhost:3000/health_management">
-        <img src="/top.png" alt="top" />
+        <img className={classes.img} src="/top.png" alt="top" />
       </a>
     </div>
   );

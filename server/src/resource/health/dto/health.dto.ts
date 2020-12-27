@@ -10,6 +10,9 @@ export class HealthDto {
   name: string;
 
   @IsString()
+  title: string;
+
+  @IsString()
   createdAt: number;
 
   @IsString()

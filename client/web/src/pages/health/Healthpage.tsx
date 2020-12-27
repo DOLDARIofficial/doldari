@@ -10,13 +10,11 @@ import Htop from '../../organisms/health/Htop';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    paddingTop: 200,
+    display: 'flex',
+    justifyContent: 'center',
   },
   paper: {
-
-    /* 
-    margin: 33 35 45 300,
-    padding: 50 50 0, */
     maxWidth: 1200,
     marginTop: 150,
     borderRadius: 40,
@@ -34,34 +32,44 @@ const useStyles = makeStyles((theme) => ({
     width: 150,
     position: 'absolute',
     top: 160,
-    right: 260,
+    right: 120,
   },
 }));
 
 export default function Healthpage(): JSX.Element {
   const classes = useStyles();
+  const dummy = [{
+    title: '(제목입니다) 북문 근처 헬스장 양도합니다!!',
+    gps: '부산대학로 88번지',
+    period: '21년 3월 24일 까지',
+    price: 20000,
+  },
+  ];
 
   return (
     <div style={{
-      paddingRight: 100, paddingLeft: 220, paddingTop: 100, color: '#d0dcf5',
+      paddingRight: 100,
+      paddingLeft: 220,
+      paddingTop: 100,
+      color: '#d0dcf5',
     }}
     >
       <Appbar />
       <Htop />
-      <Button className={classes.img_t} size="medium" component={Link} to="/heath_management/upload">
+      <Button className={classes.img_t} size="medium" component={Link} to="/health_management/upload">
         <img width="150" src="transfer.png" alt="양도하기" />
       </Button>
 
       <Paper className={classes.paper} variant="outlined" style={{ padding: 30 }}>
         <Grid container spacing={2}>
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
-          <Hgrid />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
+          <Hgrid data={dummy} />
         </Grid>
       </Paper>
       <Hpagenation />
