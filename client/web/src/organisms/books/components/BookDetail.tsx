@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
   makeStyles, createMuiTheme, ThemeProvider, createStyles,
 } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
 import { Button } from '@material-ui/core';
+import useAxios from 'axios-hooks';
 import Appbar from '../../shared/Appbar';
 
 const theme = createMuiTheme();
@@ -45,10 +45,24 @@ const useStyles = makeStyles(() => createStyles({
 
 export default function BookDetail(): JSX.Element {
   const classes = useStyles();
+
+  const [, executeGet] = useAxios({ url: '/books', method: 'get' }, { manual: true });
+  const [userdata, setData] = useState<any>();
+  useEffect(() => {
+    executeGet().then((res) => {
+      console.log(res.data);
+      setData(res.data);
+    });
+  }, []);
   return (
     <div style={{ color: 'primary', padding: 100, paddingTop: 150 }}>
       <Appbar />
       <Paper className={classes.paper}>
+        {userdata.map((v: any) => (
+          <Typography>
+            {v.title}
+          </Typography>
+        ))}
         <Grid container>
           <Typography variant="subtitle2" style={{ marginTop: 40, marginLeft: 55 }} className={classes.textprimary}>
             판매일자 2020.12.25
@@ -64,7 +78,7 @@ export default function BookDetail(): JSX.Element {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <ThemeProvider theme={theme}>
-                  <Typography variant="h3">문제해결을 위한 컴퓨팅 사고(이공 계열 전공자를 위한)</Typography>
+                  <Typography variant="h3" />
                 </ThemeProvider>
                 <Typography className={classes.textprimary} style={{ marginTop: 10 }}>
                   저자 writer

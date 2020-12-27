@@ -5,15 +5,22 @@ import {
 import { Link } from 'react-router-dom';
 
 export interface Book{
-  bookid: string;
-  title: string;
-  writer: string;
-  isbn: string;
-  price: number;
-  publisher: string;
-  date: Date;
-  userid: string;
-  state: string;
+  id?: number;
+  title?: string;
+  authors?: string;
+  translators?: string;
+  contents?: string;
+  description?: string;
+  userId?: string;
+  createdAt?: string;
+  isbn?: number;
+  url?: string;
+  state?: string;
+  thumbnail?: string;
+  publisher?: string;
+  price?: number;
+  datetime?: string;
+  sale_price?: number;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +59,12 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GridTool(): JSX.Element {
+export default function BookContent(data: Book): JSX.Element {
+  const {
+    title, authors,
+    publisher, sale_price, thumbnail,
+  } = data;
+
   const classes = useStyles();
   return (
     <Grid item xs={6} sm={3}>
@@ -62,134 +74,33 @@ export default function GridTool(): JSX.Element {
             <Grid item>
               <Paper className={classes.wrap}>
                 <ButtonBase className={classes.image} component={Link} to="/books/detail">
-                  <img className={classes.image} alt="complex" src="https://ifh.cc/g/2JYFaB.jpg" width="190" height="190" />
+                  <img className={classes.image} alt="complex" src={thumbnail} width="190" height="190" />
                 </ButtonBase>
               </Paper>
             </Grid>
           </Grid>
           <Grid item>
             <Typography className={classes.nametag}>
-              오늘의 도서
+              {title}
             </Typography>
           </Grid>
           <Grid container>
             <Grid item>
               <Typography variant="body2" color="textSecondary">
-                저자 : 윤석준
+                저자 :
+                {authors}
               </Typography>
             </Grid>
             <Grid item>
               <Typography variant="body2" color="textSecondary">
-                출판사 : DolDaRi
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.pricetag}>
-              11900원
-            </Typography>
-          </Grid>
-        </div>
-      </Grid>
-      <Grid container>
-        <div style={{ width: 190, height: 250, margin: '30px auto' }}>
-          <Grid container>
-            <Grid item>
-              <Paper className={classes.wrap}>
-                <ButtonBase className={classes.image} component={Link} to="/books/detail">
-                  <img className={classes.image} alt="complex" src="https://ifh.cc/g/2JYFaB.jpg" width="190" height="190" />
-                </ButtonBase>
-              </Paper>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.nametag}>
-              오늘의 도서
-            </Typography>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                저자 : 윤석준
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                출판사 : DolDaRi
+                출판사 :
+                {publisher}
               </Typography>
             </Grid>
           </Grid>
           <Grid item>
             <Typography className={classes.pricetag}>
-              11900원
-            </Typography>
-          </Grid>
-        </div>
-      </Grid>
-      <Grid container>
-        <div style={{ width: 190, height: 250, margin: '30px auto' }}>
-          <Grid container>
-            <Grid item>
-              <Paper className={classes.wrap}>
-                <ButtonBase className={classes.image} component={Link} to="/books/detail">
-                  <img className={classes.image} alt="complex" src="https://ifh.cc/g/2JYFaB.jpg" width="190" height="190" />
-                </ButtonBase>
-              </Paper>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.nametag}>
-              오늘의 도서
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body2" color="textSecondary">
-              저자 : 윤석준
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body2" color="textSecondary">
-              출판사 : DolDaRi
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.pricetag}>
-              11900원
-            </Typography>
-          </Grid>
-        </div>
-      </Grid>
-      <Grid container>
-        <div style={{ width: 190, height: 250, margin: '30px auto' }}>
-          <Grid container>
-            <Grid item>
-              <Paper className={classes.wrap}>
-                <ButtonBase className={classes.image} component={Link} to="/books/detail">
-                  <img className={classes.image} alt="complex" src="https://ifh.cc/g/2JYFaB.jpg" width="190" height="190" />
-                </ButtonBase>
-              </Paper>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.nametag}>
-              오늘의 도서
-            </Typography>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                저자 : 윤석준
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                출판사 : DolDaRi
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.pricetag}>
-              11900원
+              {sale_price}
             </Typography>
           </Grid>
         </div>
