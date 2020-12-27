@@ -1,14 +1,23 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-// import { GridSpacing } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-// import ButtonBase from '@material-ui/core/ButtonBase';
-// import Hgrid from '../../organisms/health/Hgrid';
-// import Hpagenation from '../../organisms/health/Hpagenation';
 import Appbar from '../../organisms/shared/Appbar';
 import Htop from '../../organisms/health/Htop';
+
+interface item {
+  title: string;
+  gps: string;
+  period: string;
+  price: number;
+  date: number;
+  content: string;
+}
+
+interface dataprops {
+  data: item[];
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 18,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 160,
+    height: 160,
   },
   img: {
     display: 'block',
@@ -67,7 +76,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HealthView(): JSX.Element {
+const data = [{
+  title: '(제목입니다) 북문 근처 헬스장 양도합니다!!',
+  gps: '부산대학로 88번지',
+  period: '21년 3월 24일 까지',
+  price: 20000,
+  date: '2020.11.22',
+  content: '콘텐츠 내용 들어갑니다',
+},
+];
+
+export default function HealthView(ItemData: dataprops): JSX.Element {
   // const [spacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
 
@@ -91,12 +110,12 @@ export default function HealthView(): JSX.Element {
                 <Typography color="textSecondary">판매 등록일</Typography>
               </Grid>
               <Grid item>
-                <Typography color="textSecondary">2020.11.22</Typography>
+                <Typography color="textSecondary">{data[0].date}</Typography>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Typography variant="h5" style={{ paddingTop: 10, paddingBottom: 20 }}>(제목입니다) 헬스장 양도합니다. *북문근처에요!!</Typography>
+        <Typography variant="h5" style={{ paddingTop: 10, paddingBottom: 20 }}>{data[0].title}</Typography>
         <Grid container className={classes.root}>
           <Grid item xs={12}>
             <Grid container justify="flex-start" spacing={4}>
@@ -104,7 +123,7 @@ export default function HealthView(): JSX.Element {
                 <Typography color="textSecondary">위치</Typography>
               </Grid>
               <Grid item>
-                <Typography>네버랜드 112동</Typography>
+                <Typography>{data[0].gps}</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -128,7 +147,7 @@ export default function HealthView(): JSX.Element {
                 <Typography color="textSecondary">기한</Typography>
               </Grid>
               <Grid item>
-                <Typography>3개월</Typography>
+                <Typography>{data[0].period}</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -136,7 +155,7 @@ export default function HealthView(): JSX.Element {
 
         <Grid container spacing={2} justify="flex-end">
           <Grid item>
-            <Typography className={classes.text}>2000</Typography>
+            <Typography className={classes.text}>{data[0].price}</Typography>
           </Grid>
           <Grid item>
             <Typography className={classes.textw}>원</Typography>
@@ -147,7 +166,7 @@ export default function HealthView(): JSX.Element {
         </Grid>
 
         <Grid className={classes.content}>
-          콘텐츠 내용 들어갑니다
+          {data[0].content}
         </Grid>
         <div style={{ padding: 40 }}>
           <img className={classes.image} src="/s-img.png" alt="이미지" style={{ marginRight: 30 }} />

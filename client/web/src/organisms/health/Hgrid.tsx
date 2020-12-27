@@ -15,7 +15,7 @@ interface item {
 interface dataprops {
   data: item[];
 }
-// data.map((v: data)=>{v.title})
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

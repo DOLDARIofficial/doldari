@@ -36,16 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const dummy = [{
-  title: '(제목입니다) 북문 근처 헬스장 양도합니다!!',
-  gps: '부산대학로 88번지',
-  period: '21년 3월 24일 까지',
-  price: 20000,
-},
-];
-
 export default function Healthpage(): JSX.Element {
   const classes = useStyles();
+  const dummy = [{
+    title: '(제목입니다) 북문 근처 헬스장 양도합니다!!',
+    gps: '부산대학로 88번지',
+    period: '21년 3월 24일 까지',
+    price: 20000,
+  },
+  ];
 
   return (
     <div style={{
