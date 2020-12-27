@@ -7,7 +7,6 @@ import useAxios from 'axios-hooks';
 import moment from 'moment';
 import Checkboxes from '../../organisms/health/Hcheck';
 import ButtonAppBar from '../../organisms/shared/Appbar';
-// import { Room } from '../../../../../server/src/resource/room/interfaces/room.interface';
 
 export interface Room{
   roomId: number;
@@ -194,13 +193,13 @@ export default function SharedPage(): JSX.Element {
             </div>
           </Grid>
 
-          <Grid item xs={1} style={{ paddingBottom: 10, justifyContent: 'left' }}>
+          <Grid item xs={2} style={{ paddingBottom: 10, justifyContent: 'left' }}>
             <Typography variant="h6">
               남은기간
             </Typography>
           </Grid>
 
-          <Grid item xs={5} style={{ paddingBottom: 30, justifyContent: 'left' }}>
+          <Grid item xs={4} style={{ paddingBottom: 30, justifyContent: 'left' }}>
             <div className={classes.search}>
               <InputBase
                 placeholder="남은기간"
@@ -213,19 +212,20 @@ export default function SharedPage(): JSX.Element {
               />
             </div>
           </Grid>
+
           <Grid item xs={6} style={{ paddingBottom: 10, justifyContent: 'left' }}>
             <Typography style={{ fontSize: 14, paddingTop: 15 }} color="textSecondary">
-              * 남은 개월 또는 날짜를 입력해 주세요.
+              * yy년 mm월 dd일까지 또는 00개월과 같은 양식으로 써주세요.
             </Typography>
           </Grid>
 
-          <Grid item xs={1} style={{ paddingBottom: 10, justifyContent: 'left' }}>
+          <Grid item xs={2} style={{ paddingBottom: 10, justifyContent: 'left' }}>
             <Typography variant="h6">
               양도금
             </Typography>
           </Grid>
 
-          <Grid item xs={11} style={{ paddingBottom: 30, justifyContent: 'left' }}>
+          <Grid item xs={10} style={{ paddingBottom: 30, justifyContent: 'left' }}>
             <Checkboxes handleState={handleState} />
           </Grid>
 
@@ -268,7 +268,7 @@ export default function SharedPage(): JSX.Element {
             {/* <input id="outlined" style={{ width: '100%' }} /> */}
           </Grid>
 
-          <Grid item xs={1} style={{ paddingTop: 30, paddingBottom: 10, justifyContent: 'left' }}>
+          <Grid item xs={2} style={{ paddingTop: 30, paddingBottom: 10, justifyContent: 'left' }}>
             <Typography variant="h6">
               첨부파일
             </Typography>
@@ -276,13 +276,13 @@ export default function SharedPage(): JSX.Element {
 
         </Grid>
 
-        <Grid item xs={12} style={{ paddingLeft: 300, paddingBottom: 5 }}>
+        <Grid item xs={12} style={{ paddingLeft: 200, paddingBottom: 5 }}>
           <Typography style={{ fontSize: 15 }}>
             거래시 발생하는 개인정보 열람(연락처 공개)에 동의하십니까?
           </Typography>
         </Grid>
 
-        <Grid item style={{ paddingLeft: 400, paddingBottom: 10, justifyContent: 'center' }}>
+        <Grid item style={{ paddingLeft: 300, paddingBottom: 10, justifyContent: 'center' }}>
           <Button variant="contained" onClick={handlePost}>
             <img src="/btn-sale.png" alt="판매하기" style={{ width: 150 }} />
           </Button>

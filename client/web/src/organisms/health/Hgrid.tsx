@@ -5,6 +5,17 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
+interface item {
+  title: string;
+  gps: string;
+  period: string;
+  price: number;
+}
+
+interface dataprops {
+  data: item[];
+}
+// data.map((v: data)=>{v.title})
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -45,19 +56,28 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
 
   },
+  pricetagw: {
+    color: '#F5A1A1',
+    fontSize: '28px',
+    textAlign: 'right',
+    fontWeight: 'bold',
+    float: 'right',
+  },
   title: {
     display: 'block',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    width: 320,
+    width: 230,
 
   },
 
 }));
 
-export default function Hgrid(): JSX.Element {
+export default function Hgrid(ItemData: dataprops): JSX.Element {
   const classes = useStyles();
+  const { data } = ItemData;
+
   return (
     <Grid item xs={6}>
       <Paper className={classes.paper} elevation={0}>
@@ -67,8 +87,7 @@ export default function Hgrid(): JSX.Element {
               <Grid item xs>
                 <Button size="medium" component={Link} to="/heath_management/detail">
                   <Typography className={classes.title} gutterBottom variant="h6">
-                    (제목입니다) 피트니스 센터 양도합니다! 길면 사라집니다.
-                    {/* {data.title} */}
+                    {data[0].title}
                   </Typography>
                 </Button>
 
@@ -79,7 +98,7 @@ export default function Hgrid(): JSX.Element {
                         <Typography color="textSecondary">위치</Typography>
                       </Grid>
                       <Grid item>
-                        <Typography>금정구 수림로 91번지 31</Typography>
+                        <Typography>{data[0].gps}</Typography>
                       </Grid>
                     </Grid>
                   </Grid>
@@ -91,7 +110,7 @@ export default function Hgrid(): JSX.Element {
                         <Typography color="textSecondary">기한</Typography>
                       </Grid>
                       <Grid item>
-                        <Typography>21년 1월 24일까지</Typography>
+                        <Typography>{data[0].period}</Typography>
                       </Grid>
                     </Grid>
                   </Grid>
@@ -107,7 +126,10 @@ export default function Hgrid(): JSX.Element {
             </ButtonBase>
 
             <Grid item>
-              <Typography className={classes.pricetag}>50000원</Typography>
+              <Typography className={classes.pricetag}>
+                {data[0].price}
+                <Typography className={classes.pricetagw}>원</Typography>
+              </Typography>
             </Grid>
 
           </Grid>
