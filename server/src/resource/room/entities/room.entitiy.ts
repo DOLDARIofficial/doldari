@@ -9,10 +9,10 @@ export class RoomEntity implements Room {
  roomId: number;
 
  @Column()
- createdAt: number;
+ createdAt: string;
 
  @Column()
- name: string;
+ title: string;
 
  @Column()
  price: number;

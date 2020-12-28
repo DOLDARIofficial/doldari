@@ -1,7 +1,7 @@
 export interface Room{
   roomId: number;
-  createdAt: number;
-  name: string;
+  createdAt: string;
+  title: string;
   price: number;
   content: string;
   seller: string;

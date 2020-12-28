@@ -1,9 +1,5 @@
 import {
-<<<<<<< HEAD
-  IsNumber, IsString,
-=======
   IsNumber, IsString, /* IsBoolean, */
->>>>>>> 8bf49a05f1f4e2166dbd7078a0a05039458af9dc
 } from 'class-validator';
 
 export class RoomDto {
@@ -11,10 +7,10 @@ export class RoomDto {
   roomId: number;
 
   @IsString()
-  name: string;
+  title: string;
 
   @IsString()
-  createdAt: number;
+  createdAt: string;
 
   @IsString()
   price: number;

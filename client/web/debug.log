@@ -1,0 +1,2 @@
+[1227/110047.367:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+[1227/130423.462:ERROR:process_info.cc(359)] UncheckedAllocate

@@ -1,14 +1,15 @@
 import React from 'react';
-// import Sidebar from '../../organisms/rooms/Sidebar';
-
-import { makeStyles, Grid } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-// import { Pagination } from './Pagination';
-import ItemSet from '../../organisms/rooms/ItemSet';
+//  useEffect, { useState }
+import { Grid, Paper, makeStyles } from '@material-ui/core';
+//   GridList,
+// import Pagination from '@material-ui/lab/Pagination';
 import Appbar from '../../organisms/shared/Appbar';
 import Tabbar from '../../organisms/shared/Tabbar';
+import ItemSet from '../../organisms/rooms/ItemSet';
+import Paginate from '../../organisms/rooms/Pagenation';
 
-// import axios from "axios";
+// import CardForm from './Card';
+// import useAxios from 'axios-hooks';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,47 +17,93 @@ const useStyles = makeStyles((theme) => ({
     background: 'white',
   },
   paper: {
-    width: '100%',
-    marginTop: '80px',
+    marginTop: '30px',
+    borderRadius: '40px',
+  },
+  box: {
+    width: '1200',
+    marginTop: 30,
     paddingRight: theme.spacing(30),
     paddingLeft: theme.spacing(30),
+  },
+  card: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '10px',
+  },
+  paperAlgin: {
+    margin: '50px',
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
   },
   grid: {
     textAlign: 'center',
   },
   img: {
-    width: 120,
-    height: 50,
-    marginTop: '30px',
+    width: 70,
+    height: 120,
+    marginTop: '150px',
     paddingRight: theme.spacing(30),
-    paddingLeft: theme.spacing(140),
+    paddingLeft: theme.spacing(170),
   },
 }));
 
+// const [page, setPage] = useState(1);
+// const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+//   setPage(value);
+// };
+
 const dummy = [{
-  title: 'title0',
-  content: 'content0',
-  price: 100000,
+  roomId: 1,
+  userId: 'a',
+  content: '자취방 양도합니다',
+  title: '제목:자취방 양도',
+  createdAt: 'Dec 28, 2020 2:14 AM',
+  locationCode: '12345',
+  warrentyPrice: 0,
+  price: 40,
 },
 {
-  title: 'title1',
-  content: 'content1',
-  price: 100000,
+  roomId: 2,
+  userId: 'b',
+  content: '자취방 2양도합니다',
+  title: '제목:자취방 양도',
+  createdAt: 'Dec 28, 2020 2:14 AM',
+  locationCode: '12345',
+  warrentyPrice: 0,
+  price: 30,
 },
 {
-  title: 'title2',
-  content: 'content2',
-  price: 200000,
+  roomId: 3,
+  userId: 'c',
+  content: '자취방3 양도합니다',
+  title: '제목:자취방 양도',
+  createdAt: 'Dec 28, 2020 2:14 AM',
+  locationCode: '12345',
+  warrentyPrice: 0,
+  price: 20,
 },
 {
-  title: 'title3',
-  content: 'content3',
-  price: 300000,
+  roomId: 4,
+  userId: 'd',
+  content: '자취방4 양도합니다',
+  title: '제목:자취방 양도',
+  createdAt: 'Dec 28, 2020 2:14 AM',
+  locationCode: '12345',
+  warrentyPrice: 0,
+  price: 35,
 },
 {
-  title: 'title1',
-  content: 'content1',
-  price: 100000,
+  roomId: 5,
+  userId: 'e',
+  content: '자취방5 양도합니다',
+  title: '제목:자취방 양도',
+  createdAt: 'Dec 28, 2020 2:14 AM',
+  locationCode: '12345',
+  warrentyPrice: 0,
+  price: 40,
 },
 ];
 
@@ -85,6 +132,7 @@ export default function Roompage(): JSX.Element {
         </Paper>
       </div>
       <div className="container">
+        <Paginate />
         {/* <Pagination
           page={page}
           totalPages={totalPages}
@@ -94,3 +142,43 @@ export default function Roompage(): JSX.Element {
     </>
   );
 }
+
+// export default function Roompage(): JSX.Element {
+//   const classes = useStyles();
+//   const [, excuteGet] = useAxios({ url: '/room', method: 'get' }, { manual: true });
+//   const [data, setData] = useState<any>();
+//   useEffect(() => {
+//     excuteGet().then((res) => {
+//       setData(res.data);
+//     });
+//   });
+//   return (
+//     <>
+//       <Appbar />
+//       <Tabbar />
+//       <div className={classes.img}>
+//         <Grid>
+//           <img alt="complex" src="transfer.png" />
+//         </Grid>
+//       </div>
+//       <div className={classes.box}>
+//         <Paper style={{ width: '1300px', height: '1400px', borderRadius: '40px' }} elevation={0} className={classes.paperAlgin}>
+//           <GridList cellHeight={160} className={classes.card} cols={2}>
+//             {data?.map((v: any) => (
+//               <CardForm
+//                 roomId={v.roomId}
+//                 createdAt={v.createdAt}
+//                 title={v.title}
+//                 warrentyPrice={v.warrentyPrice}
+//                 userId={v.userId}
+//                 content={v.content}
+//                 locationCode={v.locationCode}
+//               />
+//             ))}
+//           </GridList>
+//         </Paper>
+//       </div>
+//       <div className="container" />
+//     </>
+//   );
+// }

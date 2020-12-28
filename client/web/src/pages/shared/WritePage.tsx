@@ -1,4 +1,5 @@
 import React from 'react';
+// import SharedPage from '../../organisms/shared/SharedPage';
 import BooksWriteForm from '../../organisms/shared/BooksWriteForm';
 import Appbar from '../../organisms/shared/Appbar';
 
@@ -10,6 +11,7 @@ export default function DetailPage(): JSX.Element {
         paddingTop: 200, display: 'flex', justifyContent: 'center',
       }}
       >
+        {/* <SharedPage /> */}
         <BooksWriteForm />
 
       </div>
